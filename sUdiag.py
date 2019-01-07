@@ -19,6 +19,15 @@ else:
 
 buff=''
 
+print('## Select tty device among below')
+os.system("ls /dev/ttyU*")
+sys.stdout.flush()
+sel_port = ""
+sel_port = raw_input("ex) ttyUSB0 : ")
+if sel_port == "" :
+    sel_port = "ttyUSB0"
+
+
 def exit_handler(signal, frame):
     print('You Pressed Ctrl+C')
     termios.tcsetattr(fd, termios.TCSANOW, attrs_save)
@@ -67,6 +76,12 @@ def writeport(port):
             print("Exit~~!! Bye")
             return
             #sys.exit(0)
+        elif s_tx == 'r':
+            os.system('reset')
+            s_tx = ''
+            prev = ''
+            set_termios(fd)
+            return
         else:
             prev = ''
     if s_tx == '\x01':
@@ -78,13 +93,17 @@ def writeport(port):
     except:
         print bcolors.RED_FAIL + "Write Port Error!!!!!!!" + bcolors.ENDC
         isThreadWorking = False
+        termios.tcsetattr(fd, termios.TCSANOW, attrs_save)
+        return
 
 
+nPortFail = 0
 def readport(port):
     #print 'read child process '
     pflag = False
+    global nPortFail
     global isThreadWorking
-    try: 
+    try:
         ch=port.read(1)
         if ch != '\n':
             sys.stdout.write(ch)
@@ -92,10 +111,17 @@ def readport(port):
         #if ch=='\r' or ch == '\n':
         if ch == '\n':
             sys.stdout.write(bcolors.ENDC + ch + bcolors.CYAN + datetime.now().strftime("[%H:%M:%S.%f]") + bcolors.ENDC + bcolors.YELLOW)
-
+        nPortFail = 0
+    
     except:
-        print bcolors.RED_FAIL + "Read Port Error!!!!!!!" + bcolors.ENDC
-        isThreadWorking = False
+        ++nPortFail
+        print bcolors.RED_FAIL + "Port Read Fail" + bcolors.ENDC
+        if nPortFail > 5:
+            isThreadWorking = False
+            termios.tcsetattr(fd, termios.TCSANOW, attrs_save)
+            print("Exit~~!! Bye")
+            return
+
 
 def serialTRX(tname, port):
     rv=""
@@ -138,9 +164,7 @@ attrs_save = termios.tcgetattr(fd)
 
 # set a exception handler
 signal.signal(signal.SIGINT, exit_handler)
-
-#open a serial port
-port = serial.Serial('/dev/ttyUSB0', 115200, timeout = 1, writeTimeout = 1, xonxoff=False)
+port = serial.Serial("/dev/" + sel_port, 115200, timeout = 1, writeTimeout = 1, xonxoff=False)
 print("Current Attributei: 0x", format(attrs_save[0], '04x'),format(attrs_save[1], '04x'),format(attrs_save[2], '04x') )
 
 try:
