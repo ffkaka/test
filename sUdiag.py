@@ -116,11 +116,14 @@ def readport(port):
     except:
         ++nPortFail
         print bcolors.RED_FAIL + "Port Read Fail" + bcolors.ENDC
+        isThreadWorking = False
+        """
         if nPortFail > 5:
             isThreadWorking = False
             termios.tcsetattr(fd, termios.TCSANOW, attrs_save)
             print("Exit~~!! Bye")
             return
+        """
 
 
 def serialTRX(tname, port):
