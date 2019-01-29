@@ -1,0 +1,5 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_1='/Users/kakao/Downloads/Symantec Endpoint Protection 2/Symantec Endpoint Protection Installer.app'
+let g:netrw_dirhist_2='/Applications/MacVim.app/Contents/bin'
+let g:netrw_dirhist_3='/Applications/MacVim.app/Contents/Library'
