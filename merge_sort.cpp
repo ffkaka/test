@@ -1,4 +1,10 @@
 #include <stdio.h>
+#include <time.h>
+#include <stdlib.h>
+#include <glib.h>
+
+#define MAXN 100000
+int* arr = 0;
 
 void printarr(int arr[], int size)
 {
@@ -7,6 +13,13 @@ void printarr(int arr[], int size)
 		printf("%d ", arr[i]);
 	}
 	printf("\n");
+}
+
+void mk_rand(long long size)
+{
+	for(long long i=0; i < size; i++) {
+		arr[i] = rand() % MAXN;
+	}
 }
 
 void merge(int arr[], int start ,int mid, int end) 
@@ -43,7 +56,7 @@ void merge(int arr[], int start ,int mid, int end)
 	return;
 }
 
-void msort(int arr[], int start, int end)
+void msort(int arr[], long long start, long long end)
 {
 	if (start < end) {
 		int mid = start + (end-start) / 2;
@@ -55,13 +68,25 @@ void msort(int arr[], int start, int end)
 	return;
 }
 
-int main()
+int main(int argc, char* argv[])
 {
-	int arr[] = {8, 3, 5, 0, 2, 4, 1, 5, 6};
-	int size = sizeof(arr) / sizeof(int);
-	printarr(arr, size);
+	long long size = 0;
+	srand(time(NULL));
+	if (argc < 2) {
+		size = 100;
+	}
+	else {
+		size = atoi(argv[1]);
+	}
+	printf("size=%lld\n", size);
+	arr = new int[size];
+	mk_rand(size);
+	//printarr(arr, size);
+	gint64 startTime = g_get_monotonic_time();
 	msort(arr, 0, size-1);
-	printarr(arr, size);
-	printf("size = %d\n", size);
+	//printarr(arr, size);
+	gint64 endTime = g_get_monotonic_time();
+	printf("elapsed %ld us\n", endTime - startTime);
+	delete [] arr;
 	return 0;
 }
