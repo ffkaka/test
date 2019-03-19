@@ -42,7 +42,7 @@ class RingBuff {
 RingBuff::RingBuff(uint32_t buf_size)
 {
 	buf = NULL;
-	buf = new uint8_t[buf_size];
+	buf = new uint8_t[buf_size]();
 	assert(buf);
 	bufSize = buf_size;
 	head = 0;
@@ -121,6 +121,7 @@ void RingBuff::putData(void* buff, uint32_t size) {
 			memcpy(&buf[head], ibuf+rest, size - rest);
 			moveHead(size - rest);
 			if (tail < size - rest) {
+				printf("File over wrote\n");
 				moveTail(head - tail + 1);
 			}
 		}
