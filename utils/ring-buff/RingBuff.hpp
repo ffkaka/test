@@ -12,6 +12,7 @@
 #include <stdlib.h>
 #include <pthread.h>
 #include <stdio.h>
+#include <stdint.h>
 
 #define _DEFAULT_RINGBUF_SIZE_ 1024 * 256  // 256K
 //typedef unsigned int uint32_t;
@@ -22,9 +23,33 @@ class RingBuff {
 		RingBuff(uint32_t buf_size = _DEFAULT_RINGBUF_SIZE_);
 		~RingBuff();
 
+		/*
+		 * discrition : will copy data in ring buffer as the amount of the size. 
+		 * params in [buff] : The pointer which will be copied with the ring buffer contents.
+		 * params in [size] : The size which will be copied to the buff
+		 * return : The total copied size
+		 */
 		uint32_t getData(void* buff, uint32_t size);
+
+		/*
+		 * discrition : will copy the buff dat into the ring buffer as of size. 
+		 * This will write data even though there are data which are not poped yet(overwrite by default)
+		 * params in [buff] : The pointer which will point the contents would be copied
+		 * params in [size] : The size which will be copied to the ring buffer
+		 * return : The total copied size
+		 */
 		void putData(void* buff, uint32_t size);
+
+		/*
+		 * discrition : will return the size of contents in the ring buffer
+		 * return : The size can put the data
+		 */
 		uint32_t getReadableSize();
+
+		/*
+		 * discrition : will return the size of the empty space in ring buffer
+		 * return : The empty space in the ring buffer
+		 */
 		uint32_t getWritableSize();
 
 	private:
