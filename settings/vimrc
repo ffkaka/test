@@ -63,12 +63,14 @@ set guifont=Monaco:h18
 set ai
 set smartindent
 set nu
-set cursorline
-hi CursorLine cterm=bold
-set cursorcolumn
 set ts=4
 "set expandtab
 set shiftwidth=4
+
+" ########### For xpositioning ###########
+set cursorline
+hi CursorLine cterm=bold
+set cursorcolumn
 
 " ########### Taglist ###########
 set tags=tags,../tags,../../tags,../../../tags,../../../../tags,../../../../../tags,../../../../../../tags,../../../../../../../tags,../../../../../../../../tags,../../../../../../../../../tags;
