@@ -71,9 +71,9 @@ class PulseInputHandler {
 		PulseInputHandler(int rate=48000, in_read_format_t format = SAMPLE_S32LE, int channels = 1);
 		~PulseInputHandler();
 
-		void DIH_CreateStream(char* streamName = nullptr);
-		void DIH_FreeStream();
-		void DIH_readDataSync(void* buf, size_t bytes);
+		void PS_CreateStream(char* streamName = nullptr);
+		void PS_FreeStream();
+		void PS_readDataSync(void* buf, size_t bytes);
 
 	private:
 		char *stream_name;

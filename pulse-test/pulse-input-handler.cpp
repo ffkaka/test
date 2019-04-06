@@ -18,7 +18,7 @@
 #include <sys/syscall.h>
 
 #include <pulse/error.h>
-#include <pulse-input-handler.h>		
+#include "pulse-input-handler.h"
 #include "RingBuff.hpp"
 
 #define INPUT_UNIT_SIZE 768
@@ -80,15 +80,15 @@ PulseInputHandler::~PulseInputHandler() {
 	if (client_name) pa_xfree(client_name);
 }
 
-void PulseInputHandler::DIH_CreateStream(char* streamName) {
+void PulseInputHandler::PS_CreateStream(char* streamName) {
 	createStream(streamName);
 }
 
-void PulseInputHandler::DIH_FreeStream() {
+void PulseInputHandler::PS_FreeStream() {
 	freeStream();
 }
 
-void PulseInputHandler::DIH_readDataSync(void* buf, size_t bytes) {
+void PulseInputHandler::PS_readDataSync(void* buf, size_t bytes) {
 	readDataSync(buf, bytes);
 }
 
