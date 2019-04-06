@@ -104,3 +104,6 @@ endif
 
 " ######### For copy to clibboard #########
 set clipboard=unnamedplus
+
+" ######### For copy to clibboard #########
+set statusline+=\ %p%%
