@@ -21,10 +21,10 @@
 #include "pulse-input-handler.h"
 #include "RingBuff.hpp"
 
-#define INPUT_UNIT_SIZE 768
+//#define INPUT_UNIT_SIZE 768
 
-pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER;
-pthread_cond_t cond = PTHREAD_COND_INITIALIZER;
+//pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER;
+//pthread_cond_t cond = PTHREAD_COND_INITIALIZER;
 
 RingBuff gBuff;
 
@@ -62,15 +62,22 @@ int getFormatSize(pa_sample_format_t format)
 
 PulseInputHandler::PulseInputHandler(int rate, in_read_format_t format, int channels) {
 	sample_spec = pa_xnew0(pa_sample_spec, 1);
-	sample_spec->format = PA_SAMPLE_S24_32LE;
+	sample_spec->format = PA_SAMPLE_S32LE;
 	sample_spec->rate = 48000;
 	sample_spec->channels = (uint8_t)1;
 	readThread = 0; needRun = false;
 	userRate = rate;
 	userFormat = format;
+	pthread_mutex_init(&mutex, nullptr);
+	pthread_cond_init(&cond, nullptr);
 }
 
 PulseInputHandler::~PulseInputHandler() {
+	if (needRun) {
+		needRun = false;
+		void* ret = nullptr;
+		pthread_join(readThread, &ret);
+	}
 	if (stream) {
 		freeStream();
 	}
@@ -78,10 +85,12 @@ PulseInputHandler::~PulseInputHandler() {
 	if (channel_map) pa_xfree(channel_map);
 	if (stream_name) pa_xfree(stream_name);
 	if (client_name) pa_xfree(client_name);
+	pthread_mutex_destroy(&mutex);
+	pthread_cond_destroy(&cond);
 }
 
-void PulseInputHandler::PS_CreateStream(char* streamName) {
-	createStream(streamName);
+void PulseInputHandler::PS_CreateStream(const char* devName, const char* streamName) {
+	createStream(devName, streamName);
 }
 
 void PulseInputHandler::PS_FreeStream() {
@@ -92,14 +101,14 @@ void PulseInputHandler::PS_readDataSync(void* buf, size_t bytes) {
 	readDataSync(buf, bytes);
 }
 
-void PulseInputHandler::createStream(char *streamName) {
+void PulseInputHandler::createStream(const char* devName, const char *streamName) {
 	stream_name = pa_xstrdup( streamName? streamName : "test-input");
 
 	int error;
 	stream = pa_simple_new(NULL,
 			stream_name,
 			PA_STREAM_RECORD,
-			"regular0",
+			devName,
 			stream_name,
 			sample_spec,
 			channel_map,
@@ -124,33 +133,42 @@ void PulseInputHandler::createStream(char *streamName) {
 }
 
 void* PulseInputHandler::readThreadFunc(void* data) {
-	pthread_mutex_lock(&mutex);
-	pthread_cond_signal(&cond);
-	pthread_mutex_unlock(&mutex);
-
 	assert(data);
 	auto pthis = static_cast<PulseInputHandler*>(data);
-	int error = 0;
+	
+	pthread_mutex_lock(&pthis->mutex);
+	pthread_cond_signal(&pthis->cond);
+	pthread_mutex_unlock(&pthis->mutex);
 
+	int error = 0;
 	printf("[%u:%lu] Thread Started\n", getpid(), syscall(__NR_gettid));
+	uint32_t tenMsSize = pthis->sample_spec->rate / 100;
 	while (true) {
-		uint8_t buf[INPUT_UNIT_SIZE * getFormatSize(pthis->sample_spec->format) * pthis->sample_spec->channels] = {0,};
-		pthread_mutex_lock(&mutex);
-		if (!pthis->needRun) break;
+		uint8_t buf[tenMsSize * getFormatSize(pthis->sample_spec->format) * pthis->sample_spec->channels] = {0,};
+		pthread_mutex_lock(&pthis->mutex);
+		if (!pthis->needRun) { 
+			pthread_mutex_unlock(&pthis->mutex);
+			break;
+		}
 		if (pa_simple_read(pthis->stream, buf, sizeof(buf), &error) < 0) {
 			printf("[%u:%lu] failt to read simple data (%s)\n",
 					getpid(), syscall(__NR_gettid), pa_strerror(error));
 		}
 		else {
 			gBuff.putData(buf, sizeof(buf));
-			if (gBuff.getReadableSize() >= sizeof(buf)) {
-				pthread_cond_signal(&cond);
+			if (gBuff.getReadableSize() >= pthis->userReadSize) {
+				pthread_cond_signal(&pthis->cond);
 			}
 		}
-		pthread_mutex_unlock(&mutex);
+		pthread_mutex_unlock(&pthis->mutex);
 		usleep(5000);
 	}
+	printf("[%u:%lu] Thread Exit\n", getpid(), syscall(__NR_gettid));
 	return nullptr;
+}
+
+
+void PulseInputHandler::putData(uint8_t* buf, size_t size) {
 }
 
 void PulseInputHandler::freeStream() {
@@ -169,7 +187,10 @@ void PulseInputHandler::freeStream() {
 void PulseInputHandler::readDataSync(void *buf, size_t bytes) {
 	static uint32_t totalFeed = 0;
 	pthread_mutex_lock(&mutex);
-	pthread_cond_wait(&cond, &mutex);
+	if (gBuff.getReadableSize() < bytes) {
+		userReadSize = bytes;
+		pthread_cond_wait(&cond, &mutex);
+	}
 	if ( totalFeed > userRate * getFormatSize((pa_sample_format_t)userFormat) * 5) {
 		printf("[%u:%lu] 5sec data recorded\n", getpid(), syscall(__NR_gettid));
 		totalFeed = 0;

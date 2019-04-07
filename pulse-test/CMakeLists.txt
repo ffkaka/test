@@ -9,6 +9,7 @@ find_package(Threads REQUIRED)
 
 add_executable(pulse-test 
 	pulse-input-handler.cpp
+	record.cpp
 	)
 
 pkg_check_modules(PULSE REQUIRED libpulse)

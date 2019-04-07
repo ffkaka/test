@@ -71,7 +71,7 @@ class PulseInputHandler {
 		PulseInputHandler(int rate=48000, in_read_format_t format = SAMPLE_S32LE, int channels = 1);
 		~PulseInputHandler();
 
-		void PS_CreateStream(char* streamName = nullptr);
+		void PS_CreateStream(const char* devName = nullptr, const char* streamName = nullptr);
 		void PS_FreeStream();
 		void PS_readDataSync(void* buf, size_t bytes);
 
@@ -81,19 +81,23 @@ class PulseInputHandler {
 		char *device;
 		size_t latencyByte;
 		pa_simple *stream;
-		pa_sample_spec *sample_spec;
-		pa_channel_map *channel_map;
-		pthread_t readThread;
+		pa_sample_spec *sample_spec = nullptr;
+		pa_channel_map *channel_map = nullptr;
+		pthread_t readThread = 0;
 		bool needRun;
 		uint32_t readBufSize;
 		uint32_t feedBufSize;
-		int userRate;
+		int userRate = 0;
+		int userReadSize = 4096;
 		in_read_format_t userFormat;
+		pthread_mutex_t mutex;
+		pthread_cond_t cond;
 
-		void createStream(char* streamName);
+		void createStream(const char* devName, const char* streamName);
 		void freeStream();
 		void readDataSync(void* buf, size_t bytes);
 		static void* readThreadFunc(void* data);
+		void putData(uint8_t* buf, size_t size);
 };
 
 #endif //__PULSE_INPUT_HANDLER_H__
