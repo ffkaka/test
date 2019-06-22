@@ -4,7 +4,7 @@
 /****************************************************
  * This is a Ringbuffer samples which can be used for multi-threaded application
  * write operation will overwrite even there is not read datas. 
- * dylan.ka - ffkaka
+ * ffkaka
  ***************************************************/
 
 #include <string.h>
@@ -14,7 +14,7 @@
 #include <stdio.h>
 #include <stdint.h>
 
-#define _DEFAULT_RINGBUF_SIZE_ 1024 * 256  // 256K
+#define _DEFAULT_RINGBUF_SIZE_ 1024 * 1024 * 2 // 2MB
 //typedef unsigned int uint32_t;
 //typedef unsigned char uint8_t;
 
