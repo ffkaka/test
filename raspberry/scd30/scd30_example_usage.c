@@ -40,6 +40,7 @@
 //#define printf(...)
 //#define sleep(...)
 //#define usleep(...)
+#define STR_TIME_FORMAT      "%y%m%d/%H:%M:%S"
 
 int main(void) {
     float32_t co2_ppm, temperature, relative_humidity;
@@ -77,13 +78,21 @@ int main(void) {
                     printf("error reading measurement\n");
 
                 } else {
-                    printf("measured co2 concentration: %0.2f ppm, "
-                           "measured temperature: %0.2f degreeCelsius, "
-                           "measured humidity: %0.2f %%RH\n",
-                           co2_ppm, temperature, relative_humidity);
+					struct timespec tp;
+					struct tm   tm_now;
+					char buf[32] = {0};
+					clock_gettime(CLOCK_REALTIME, &tp);
+					localtime_r((time_t *)&tp.tv_sec, &tm_now);
+					strftime(buf, 32, STR_TIME_FORMAT, &tm_now);
+                    printf("[%s] co2 concentr: %0.2f ppm, "
+                           "Temp: %0.2f C, "
+                           "Humidity: %0.2f %%RH\n",
+                           buf,co2_ppm,
+						   temperature,
+						   relative_humidity);
                 }
             } else {
-                printf("measurement not ready\n");
+                //printf("measurement not ready\n");
                 usleep(1000000);
                 continue;
             }

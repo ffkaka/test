@@ -29,16 +29,17 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
+#include <fcntl.h>     /* close, open */
+#include <stdio.h>     /* fprintf, perror, stderr */
+#include <stdlib.h>    /* exit */
+#include <string.h>    /* strlen */
+#include <sys/types.h> /* mode_t */
+#include <unistd.h>    /* access, lseek, read, usleep */
+
 #include "sensirion_arch_config.h"
 #include "sensirion_sw_i2c_gpio.h"
 
 /*
- * INSTRUCTIONS
- * ============
- *
- * Implement all functions where they are marked as IMPLEMENT.
- * Follow the function specification in the comments.
- *
  * We use the following names for the two I2C signal lines:
  * SCL for the clock line
  * SDA for the data line
@@ -46,20 +47,114 @@
  * Both lines must be equipped with pull-up resistors appropriate to the bus
  * frequency.
  */
+#define GPIO_PIN_SCL 12
+#define GPIO_PIN_SDA 13
+#define GPIO_DIR "/sys/class/gpio/"
+
+#define __str(x) #x
+#define GPIO_PIN_STR(p) __str(p)
+#define GPIO_PIN_SCL_STR GPIO_PIN_STR(GPIO_PIN_SCL)
+#define GPIO_PIN_SDA_STR GPIO_PIN_STR(GPIO_PIN_SDA)
+#define GPIO_ID "gpio"
+#define GPIO(p) GPIO_ID __str(p)
+#define GPIO_PATH(p) GPIO_DIR p
+#define GPIO_EXPORT_PATH GPIO_PATH("export")
+#define GPIO_SCL_DIR GPIO_PATH(GPIO(GPIO_PIN_SCL))
+#define GPIO_SDA_DIR GPIO_PATH(GPIO(GPIO_PIN_SDA))
+#define GPIO_SCL_PATH(d) GPIO_SCL_DIR d
+#define GPIO_SDA_PATH(d) GPIO_SDA_DIR d
+#define GPIO_SCL_DIRECTION GPIO_SCL_PATH("/direction")
+#define GPIO_SDA_DIRECTION GPIO_SDA_PATH("/direction")
+#define GPIO_SCL_VALUE GPIO_SCL_PATH("/value")
+#define GPIO_SDA_VALUE GPIO_SDA_PATH("/value")
+
+#define GPIO_DIRECTION_IN "in"
+#define GPIO_DIRECTION_OUT "out"
+#define GPIO_LOW 0
+
+static int scl_dir_fd;
+static int scl_val_fd;
+static int sda_dir_fd;
+static int sda_val_fd;
+
+static int open_or_exit(const char *path, mode_t mode) {
+    int fd = open(path, mode);
+    if (fd < 0) {
+        perror(NULL);
+        fprintf(stderr, "Error opening %s (mode %d)\n", path, mode);
+        exit(-1);
+    }
+    return fd;
+}
+
+static void rev_or_exit(int fd) {
+    if (lseek(fd, 0, SEEK_SET) < 0) {
+        perror("Error seeking gpio");
+        exit(-1);
+    }
+}
+
+static void write_or_exit(int fd, const char *buf) {
+    size_t len = strlen(buf);
+
+    if (write(fd, buf, len) != len) {
+        perror("Error writing");
+        exit(-1);
+    }
+}
+
+static void gpio_export(const char *path, const char *export_pin) {
+    int fd;
+
+    if (access(path, F_OK) == -1) {
+        fd = open_or_exit(GPIO_EXPORT_PATH, O_WRONLY);
+        write_or_exit(fd, export_pin);
+        close(fd);
+    }
+}
+
+static void gpio_set_value(int fd, int value) {
+    char buf[] = {'0', '\0'};
+
+    buf[0] += value;
+    rev_or_exit(fd);
+    write_or_exit(fd, buf);
+}
+
+static void gpio_set_direction(int fd, const char *dir) {
+    rev_or_exit(fd);
+    write_or_exit(fd, dir);
+}
+
+static char gpio_get_value(int fd) {
+    char c;
+
+    rev_or_exit(fd);
+    if (read(fd, &c, 1) != 1) {
+        perror("Error reading GPIO value");
+        exit(-1);
+    }
+    return c == '1';
+}
 
 /**
  * Initialize all hard- and software components that are needed to set the
  * SDA and SCL pins.
  */
 void sensirion_init_pins(void) {
-    // IMPLEMENT
+    gpio_export(GPIO_SCL_DIR, GPIO_PIN_SCL_STR);
+    gpio_export(GPIO_SDA_DIR, GPIO_PIN_SDA_STR);
+
+    scl_dir_fd = open_or_exit(GPIO_SCL_DIRECTION, O_WRONLY);
+    scl_val_fd = open_or_exit(GPIO_SCL_VALUE, O_RDWR);
+    sda_dir_fd = open_or_exit(GPIO_SDA_DIRECTION, O_WRONLY);
+    sda_val_fd = open_or_exit(GPIO_SDA_VALUE, O_RDWR);
 }
 
 /**
  * Release all resources initialized by sensirion_init_pins()
  */
 void sensirion_release_pins(void) {
-    // IMPLEMENT or leave empty if no resources need to be freed
 }
 
 /**
@@ -68,14 +163,15 @@ void sensirion_release_pins(void) {
  * configured to use the internal pull-up resistor.
  */
 void sensirion_SDA_in(void) {
-    // IMPLEMENT
+    gpio_set_direction(sda_dir_fd, GPIO_DIRECTION_IN);
 }
 
 /**
  * Configure the SDA pin as an output and drive it low or set to logical false.
  */
 void sensirion_SDA_out(void) {
-    // IMPLEMENT
+    gpio_set_direction(sda_dir_fd, GPIO_DIRECTION_OUT);
+    gpio_set_value(sda_val_fd, GPIO_LOW);
 }
 
 /**
@@ -83,8 +179,7 @@ void sensirion_SDA_out(void) {
  * @returns 0 if the pin is low and 1 otherwise.
  */
 uint8_t sensirion_SDA_read(void) {
-    // IMPLEMENT
-    return 1;
+    return gpio_get_value(sda_val_fd);
 }
 
 /**
@@ -93,14 +188,15 @@ uint8_t sensirion_SDA_read(void) {
  * configured to use the internal pull-up resistor.
  */
 void sensirion_SCL_in(void) {
-    // IMPLEMENT
+    gpio_set_direction(scl_dir_fd, GPIO_DIRECTION_IN);
 }
 
 /**
  * Configure the SCL pin as an output and drive it low or set to logical false.
  */
 void sensirion_SCL_out(void) {
-    // IMPLEMENT
+    gpio_set_direction(scl_dir_fd, GPIO_DIRECTION_OUT);
+    gpio_set_value(scl_val_fd, GPIO_LOW);
 }
 
 /**
@@ -108,8 +204,7 @@ void sensirion_SCL_out(void) {
  * @returns 0 if the pin is low and 1 otherwise.
  */
 uint8_t sensirion_SCL_read(void) {
-    // IMPLEMENT
-    return 1;
+    return gpio_get_value(scl_val_fd);
 }
 
 /**
@@ -125,5 +220,5 @@ uint8_t sensirion_SCL_read(void) {
  * @param useconds the sleep time in microseconds
  */
 void sensirion_sleep_usec(uint32_t useconds) {
-    // IMPLEMENT
+    usleep(useconds);
 }
