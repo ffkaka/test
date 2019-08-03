@@ -1,0 +1,318 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+ARRAY_SIZE	./sensirion_common.h	72;"	d
+CFLAGS	./Makefile	/^CFLAGS := -Os -Wall -fstrict-aliasing -Wstrict-aliasing=1 -I. -I${sensirion_common_dir}$/;"	m
+CRC8_INIT	./sensirion_common.h	76;"	d
+CRC8_LEN	./sensirion_common.h	77;"	d
+CRC8_POLYNOMIAL	./sensirion_common.h	75;"	d
+DELAY_USEC	./sw_i2c/sensirion_sw_i2c.c	37;"	d	file:
+EOL	./hw_i2c/sample-implementations/mbed/sgp30_example_usage.cpp	37;"	d	file:
+E_MBED_I2C_READ_FAILED	./hw_i2c/sample-implementations/mbed/sensirion_hw_i2c_implementation.cpp	36;"	d	file:
+E_MBED_I2C_WRITE_FAILED	./hw_i2c/sample-implementations/mbed/sensirion_hw_i2c_implementation.cpp	37;"	d	file:
+GIT_VERSION_H	./scd_git_version.h	33;"	d
+GPIO	./sw_i2c/sample-implementations/linux_user_space/sensirion_sw_i2c_implementation.c	59;"	d	file:
+GPIO_DIR	./sw_i2c/sample-implementations/linux_user_space/sensirion_sw_i2c_implementation.c	52;"	d	file:
+GPIO_DIRECTION_IN	./sw_i2c/sample-implementations/linux_user_space/sensirion_sw_i2c_implementation.c	71;"	d	file:
+GPIO_DIRECTION_OUT	./sw_i2c/sample-implementations/linux_user_space/sensirion_sw_i2c_implementation.c	72;"	d	file:
+GPIO_EXPORT_PATH	./sw_i2c/sample-implementations/linux_user_space/sensirion_sw_i2c_implementation.c	61;"	d	file:
+GPIO_ID	./sw_i2c/sample-implementations/linux_user_space/sensirion_sw_i2c_implementation.c	58;"	d	file:
+GPIO_LOW	./sw_i2c/sample-implementations/linux_user_space/sensirion_sw_i2c_implementation.c	73;"	d	file:
+GPIO_PATH	./sw_i2c/sample-implementations/linux_user_space/sensirion_sw_i2c_implementation.c	60;"	d	file:
+GPIO_PIN_SCL	./sw_i2c/sample-implementations/linux_user_space/sensirion_sw_i2c_implementation.c	50;"	d	file:
+GPIO_PIN_SCL_STR	./sw_i2c/sample-implementations/linux_user_space/sensirion_sw_i2c_implementation.c	56;"	d	file:
+GPIO_PIN_SDA	./sw_i2c/sample-implementations/linux_user_space/sensirion_sw_i2c_implementation.c	51;"	d	file:
+GPIO_PIN_SDA_STR	./sw_i2c/sample-implementations/linux_user_space/sensirion_sw_i2c_implementation.c	57;"	d	file:
+GPIO_PIN_STR	./sw_i2c/sample-implementations/linux_user_space/sensirion_sw_i2c_implementation.c	55;"	d	file:
+GPIO_SCL_DIR	./sw_i2c/sample-implementations/linux_user_space/sensirion_sw_i2c_implementation.c	62;"	d	file:
+GPIO_SCL_DIRECTION	./sw_i2c/sample-implementations/linux_user_space/sensirion_sw_i2c_implementation.c	66;"	d	file:
+GPIO_SCL_PATH	./sw_i2c/sample-implementations/linux_user_space/sensirion_sw_i2c_implementation.c	64;"	d	file:
+GPIO_SCL_VALUE	./sw_i2c/sample-implementations/linux_user_space/sensirion_sw_i2c_implementation.c	68;"	d	file:
+GPIO_SDA_DIR	./sw_i2c/sample-implementations/linux_user_space/sensirion_sw_i2c_implementation.c	63;"	d	file:
+GPIO_SDA_DIRECTION	./sw_i2c/sample-implementations/linux_user_space/sensirion_sw_i2c_implementation.c	67;"	d	file:
+GPIO_SDA_PATH	./sw_i2c/sample-implementations/linux_user_space/sensirion_sw_i2c_implementation.c	65;"	d	file:
+GPIO_SDA_VALUE	./sw_i2c/sample-implementations/linux_user_space/sensirion_sw_i2c_implementation.c	69;"	d	file:
+I2C	./hw_i2c/sample-implementations/arduino-alt-i2c/i2c_master_lib.cpp	/^I2C::I2C() {$/;"	f	class:I2C
+I2C	./hw_i2c/sample-implementations/arduino-alt-i2c/i2c_master_lib.h	/^class I2C {$/;"	c
+I2C_1_PIN_SCL	./hw_i2c/sample-implementations/arduino-mkrzero-multiple-i2c-buses/sensirion_hw_i2c_implementation.cpp	53;"	d	file:
+I2C_1_PIN_SDA	./hw_i2c/sample-implementations/arduino-mkrzero-multiple-i2c-buses/sensirion_hw_i2c_implementation.cpp	52;"	d	file:
+I2C_DEVICE_PATH	./hw_i2c/sample-implementations/linux_user_space/sensirion_hw_i2c_implementation.c	44;"	d	file:
+I2C_READ_FAILED	./hw_i2c/sample-implementations/linux_user_space/sensirion_hw_i2c_implementation.c	54;"	d	file:
+I2C_SLAVE	./hw_i2c/sample-implementations/linux_user_space/sensirion_hw_i2c_implementation.c	51;"	d	file:
+I2C_WRITE_FAILED	./hw_i2c/sample-implementations/linux_user_space/sensirion_hw_i2c_implementation.c	53;"	d	file:
+I2C_h	./hw_i2c/sample-implementations/arduino-alt-i2c/i2c_master_lib.h	65;"	d
+I2c	./hw_i2c/sample-implementations/arduino-alt-i2c/i2c_master_lib.cpp	/^I2C I2c = I2C();$/;"	v
+LOST_ARBTRTN	./hw_i2c/sample-implementations/arduino-alt-i2c/i2c_master_lib.h	77;"	d
+MAX_BUFFER_SIZE	./hw_i2c/sample-implementations/arduino-alt-i2c/i2c_master_lib.h	84;"	d
+MR_DATA_ACK	./hw_i2c/sample-implementations/arduino-alt-i2c/i2c_master_lib.h	75;"	d
+MR_DATA_NACK	./hw_i2c/sample-implementations/arduino-alt-i2c/i2c_master_lib.h	76;"	d
+MR_SLA_ACK	./hw_i2c/sample-implementations/arduino-alt-i2c/i2c_master_lib.h	73;"	d
+MR_SLA_NACK	./hw_i2c/sample-implementations/arduino-alt-i2c/i2c_master_lib.h	74;"	d
+MT_DATA_ACK	./hw_i2c/sample-implementations/arduino-alt-i2c/i2c_master_lib.h	71;"	d
+MT_DATA_NACK	./hw_i2c/sample-implementations/arduino-alt-i2c/i2c_master_lib.h	72;"	d
+MT_SLA_ACK	./hw_i2c/sample-implementations/arduino-alt-i2c/i2c_master_lib.h	69;"	d
+MT_SLA_NACK	./hw_i2c/sample-implementations/arduino-alt-i2c/i2c_master_lib.h	70;"	d
+REGVALIN	./sw_i2c/sample-implementations/Nordic_nRF5_series/sensirion_sw_i2c_implementation.c	/^static const uint32_t REGVALIN =$/;"	v	file:
+REGVALOUT	./sw_i2c/sample-implementations/Nordic_nRF5_series/sensirion_sw_i2c_implementation.c	/^static const uint32_t REGVALOUT =$/;"	v	file:
+REPEATED_START	./hw_i2c/sample-implementations/arduino-alt-i2c/i2c_master_lib.h	68;"	d
+SCD30_CMD_AUTO_SELF_CALIBRATION	./scd30.c	52;"	d	file:
+SCD30_CMD_GET_DATA_READY	./scd30.c	48;"	d	file:
+SCD30_CMD_READ_MEASUREMENT	./scd30.c	46;"	d	file:
+SCD30_CMD_READ_SERIAL	./scd30.c	53;"	d	file:
+SCD30_CMD_SET_ALTITUDE	./scd30.c	50;"	d	file:
+SCD30_CMD_SET_FORCED_RECALIBRATION	./scd30.c	51;"	d	file:
+SCD30_CMD_SET_MEASUREMENT_INTERVAL	./scd30.c	47;"	d	file:
+SCD30_CMD_SET_TEMPERATURE_OFFSET	./scd30.c	49;"	d	file:
+SCD30_CMD_SINGLE_WORD_BUF_LEN	./scd30.c	58;"	d	file:
+SCD30_CMD_START_PERIODIC_MEASUREMENT	./scd30.c	44;"	d	file:
+SCD30_CMD_STOP_PERIODIC_MEASUREMENT	./scd30.c	45;"	d	file:
+SCD30_H	./scd30.h	33;"	d
+SCD30_I2C_ADDRESS	./scd30.c	/^static const uint8_t SCD30_I2C_ADDRESS = 0x61;$/;"	v	file:
+SCD30_I2C_ADDRESS	./scd30.c	/^static const uint8_t SCD30_I2C_ADDRESS = SCD30_ADDRESS;$/;"	v	file:
+SCD30_MAX_BUFFER_WORDS	./scd30.c	57;"	d	file:
+SCD30_SERIAL_NUM_WORDS	./scd30.c	54;"	d	file:
+SCD30_WRITE_DELAY_US	./scd30.c	55;"	d	file:
+SCD_DRV_VERSION_STR	./scd_git_version.c	/^const char * SCD_DRV_VERSION_STR = "1.0.0-11-g3bcde93";$/;"	v
+SENSIRION_ARCH_CONFIG_H	./sensirion_arch_config.h	33;"	d
+SENSIRION_BIG_ENDIAN	./sensirion_arch_config.h	98;"	d
+SENSIRION_COMMAND_SIZE	./sensirion_common.h	79;"	d
+SENSIRION_COMMON_H	./sensirion_common.h	33;"	d
+SENSIRION_I2C_CLOCK_PERIOD_USEC	./sensirion_arch_config.h	107;"	d
+SENSIRION_I2C_H	./sensirion_i2c.h	33;"	d
+SENSIRION_MAX_BUFFER_WORDS	./sensirion_common.h	82;"	d
+SENSIRION_NUM_WORDS	./sensirion_common.h	81;"	d
+SENSIRION_SCL_PIN	./hw_i2c/sample-implementations/Nordic_nRF5_series/sensirion_hw_i2c_implementation.c	44;"	d	file:
+SENSIRION_SCL_PIN	./sw_i2c/sample-implementations/Nordic_nRF5_series/sensirion_sw_i2c_implementation.c	54;"	d	file:
+SENSIRION_SDA_PIN	./hw_i2c/sample-implementations/Nordic_nRF5_series/sensirion_hw_i2c_implementation.c	43;"	d	file:
+SENSIRION_SDA_PIN	./sw_i2c/sample-implementations/Nordic_nRF5_series/sensirion_sw_i2c_implementation.c	53;"	d	file:
+SENSIRION_SW_I2C_GPIO_H	./sw_i2c/sensirion_sw_i2c_gpio.h	33;"	d
+SENSIRION_WORDS_TO_BYTES	./sensirion_common.h	48;"	d
+SENSIRION_WORDS_TO_BYTES	./sensirion_common.h	64;"	d
+SENSIRION_WORD_SIZE	./sensirion_common.h	80;"	d
+SERCOM2_Handler	./hw_i2c/sample-implementations/arduino-mkrzero-multiple-i2c-buses/sensirion_hw_i2c_implementation.cpp	/^void SERCOM2_Handler(void) {$/;"	f
+SLA_R	./hw_i2c/sample-implementations/arduino-alt-i2c/i2c_master_lib.h	80;"	d
+SLA_W	./hw_i2c/sample-implementations/arduino-alt-i2c/i2c_master_lib.h	79;"	d
+START	./hw_i2c/sample-implementations/arduino-alt-i2c/i2c_master_lib.h	67;"	d
+STATUS_FAIL	./sensirion_common.h	42;"	d
+STATUS_OK	./sensirion_common.h	41;"	d
+TWI_STATUS	./hw_i2c/sample-implementations/arduino-alt-i2c/i2c_master_lib.h	78;"	d
+Wire2	./hw_i2c/sample-implementations/arduino-mkrzero-multiple-i2c-buses/sensirion_hw_i2c_implementation.cpp	/^TwoWire Wire2(&sercom2, I2C_1_PIN_SDA, I2C_1_PIN_SCL);$/;"	v
+__str	./sw_i2c/sample-implementations/linux_user_space/sensirion_sw_i2c_implementation.c	54;"	d	file:
+all_objects	./Makefile	/^all_objects := ${sensirion_common_objects} ${scd_common_objects} ${hw_objects} ${sw_objects} scd30.o$/;"	m
+available	./hw_i2c/sample-implementations/arduino-alt-i2c/i2c_master_lib.cpp	/^uint8_t I2C::available() {$/;"	f	class:I2C
+be16_to_cpu	./sensirion_common.h	45;"	d
+be16_to_cpu	./sensirion_common.h	52;"	d
+be32_to_cpu	./sensirion_common.h	46;"	d
+be32_to_cpu	./sensirion_common.h	53;"	d
+be64_to_cpu	./sensirion_common.h	47;"	d
+be64_to_cpu	./sensirion_common.h	55;"	d
+begin	./hw_i2c/sample-implementations/arduino-alt-i2c/i2c_master_lib.cpp	/^void I2C::begin() {$/;"	f	class:I2C
+bufferIndex	./hw_i2c/sample-implementations/arduino-alt-i2c/i2c_master_lib.cpp	/^uint8_t I2C::bufferIndex = 0;$/;"	m	class:I2C	file:
+bufferIndex	./hw_i2c/sample-implementations/arduino-alt-i2c/i2c_master_lib.h	/^    static uint8_t bufferIndex;$/;"	m	class:I2C
+bytesAvailable	./hw_i2c/sample-implementations/arduino-alt-i2c/i2c_master_lib.cpp	/^uint8_t I2C::bytesAvailable = 0;$/;"	m	class:I2C	file:
+bytesAvailable	./hw_i2c/sample-implementations/arduino-alt-i2c/i2c_master_lib.h	/^    static uint8_t bytesAvailable;$/;"	m	class:I2C
+cbi	./hw_i2c/sample-implementations/arduino-alt-i2c/i2c_master_lib.h	81;"	d
+data	./hw_i2c/sample-implementations/arduino-alt-i2c/i2c_master_lib.h	/^    uint8_t data[MAX_BUFFER_SIZE];$/;"	m	class:I2C
+end	./hw_i2c/sample-implementations/arduino-alt-i2c/i2c_master_lib.cpp	/^void I2C::end() {$/;"	f	class:I2C
+float32_t	./sensirion_arch_config.h	/^typedef float float32_t;$/;"	t
+gpio_export	./sw_i2c/sample-implementations/linux_user_space/sensirion_sw_i2c_implementation.c	/^static void gpio_export(const char *path, const char *export_pin) {$/;"	f	file:
+gpio_get_value	./sw_i2c/sample-implementations/linux_user_space/sensirion_sw_i2c_implementation.c	/^static char gpio_get_value(int fd) {$/;"	f	file:
+gpio_set_direction	./sw_i2c/sample-implementations/linux_user_space/sensirion_sw_i2c_implementation.c	/^static void gpio_set_direction(int fd, const char *dir) {$/;"	f	file:
+gpio_set_value	./sw_i2c/sample-implementations/linux_user_space/sensirion_sw_i2c_implementation.c	/^static void gpio_set_value(int fd, int value) {$/;"	f	file:
+hi2c1	./hw_i2c/sample-implementations/STM32F1_series/sensirion_hw_i2c_implementation.c	/^static I2C_HandleTypeDef hi2c1;$/;"	v	file:
+hw_i2c_dir	./Makefile	/^hw_i2c_dir := ${sensirion_common_dir}\/hw_i2c$/;"	m
+hw_objects	./Makefile	/^hw_objects := sensirion_hw_i2c_implementation.o$/;"	m
+i2c_address	./hw_i2c/sample-implementations/linux_user_space/sensirion_hw_i2c_implementation.c	/^static uint8_t i2c_address = 0;$/;"	v	file:
+i2c_bus	./hw_i2c/sample-implementations/arduino-mkrzero-multiple-i2c-buses/sensirion_hw_i2c_implementation.cpp	/^static TwoWire *const i2c_bus[] = {&Wire, &Wire2};$/;"	v	file:
+i2c_device	./hw_i2c/sample-implementations/linux_user_space/sensirion_hw_i2c_implementation.c	/^static int i2c_device = -1;$/;"	v	file:
+i2c_instance	./hw_i2c/sample-implementations/Nordic_nRF5_series/sensirion_hw_i2c_implementation.c	/^static const nrf_drv_twi_t i2c_instance = NRF_DRV_TWI_INSTANCE(0);$/;"	v	file:
+i2c_master_instance	./hw_i2c/sample-implementations/Atmel_SAMD2_series/sensirion_hw_i2c_implementation.c	/^struct i2c_master_module i2c_master_instance;$/;"	v	typeref:struct:i2c_master_module
+lockUp	./hw_i2c/sample-implementations/arduino-alt-i2c/i2c_master_lib.cpp	/^void I2C::lockUp() {$/;"	f	class:I2C
+main	./hw_i2c/sample-implementations/mbed/sgp30_example_usage.cpp	/^int main(void) {$/;"	f
+main	./scd30_example_usage.c	/^int main(void) {$/;"	f
+nack	./hw_i2c/sample-implementations/arduino-alt-i2c/i2c_master_lib.h	/^    uint8_t nack;$/;"	m	class:I2C
+open_or_exit	./sw_i2c/sample-implementations/linux_user_space/sensirion_sw_i2c_implementation.c	/^static int open_or_exit(const char *path, mode_t mode) {$/;"	f	file:
+pullup	./hw_i2c/sample-implementations/arduino-alt-i2c/i2c_master_lib.cpp	/^void I2C::pullup(uint8_t activate) {$/;"	f	class:I2C
+read	./hw_i2c/sample-implementations/arduino-alt-i2c/i2c_master_lib.cpp	/^uint8_t I2C::read(int address, int numberBytes) {$/;"	f	class:I2C
+read	./hw_i2c/sample-implementations/arduino-alt-i2c/i2c_master_lib.cpp	/^uint8_t I2C::read(int address, int registerAddress, int numberBytes) {$/;"	f	class:I2C
+read	./hw_i2c/sample-implementations/arduino-alt-i2c/i2c_master_lib.cpp	/^uint8_t I2C::read(uint8_t address, uint8_t numberBytes) {$/;"	f	class:I2C
+read	./hw_i2c/sample-implementations/arduino-alt-i2c/i2c_master_lib.cpp	/^uint8_t I2C::read(uint8_t address, uint8_t numberBytes, uint8_t *dataBuffer) {$/;"	f	class:I2C
+read	./hw_i2c/sample-implementations/arduino-alt-i2c/i2c_master_lib.cpp	/^uint8_t I2C::read(uint8_t address, uint8_t registerAddress, uint8_t numberBytes,$/;"	f	class:I2C
+read	./hw_i2c/sample-implementations/arduino-alt-i2c/i2c_master_lib.cpp	/^uint8_t I2C::read(uint8_t address, uint8_t registerAddress,$/;"	f	class:I2C
+receive	./hw_i2c/sample-implementations/arduino-alt-i2c/i2c_master_lib.cpp	/^uint8_t I2C::receive() {$/;"	f	class:I2C
+receiveByte	./hw_i2c/sample-implementations/arduino-alt-i2c/i2c_master_lib.cpp	/^uint8_t I2C::receiveByte(uint8_t ack) {$/;"	f	class:I2C
+returnStatus	./hw_i2c/sample-implementations/arduino-alt-i2c/i2c_master_lib.h	/^    uint8_t returnStatus;$/;"	m	class:I2C
+rev_or_exit	./sw_i2c/sample-implementations/linux_user_space/sensirion_sw_i2c_implementation.c	/^static void rev_or_exit(int fd) {$/;"	f	file:
+sbi	./hw_i2c/sample-implementations/arduino-alt-i2c/i2c_master_lib.h	82;"	d
+scan	./hw_i2c/sample-implementations/arduino-alt-i2c/i2c_master_lib.cpp	/^void I2C::scan() {$/;"	f	class:I2C
+scd30_binaries	./Makefile	/^scd30_binaries := scd30_example_usage_sw_i2c scd30_example_usage_hw_i2c$/;"	m
+scd30_enable_automatic_self_calibration	./scd30.c	/^int16_t scd30_enable_automatic_self_calibration(uint8_t enable_asc) {$/;"	f
+scd30_get_automatic_self_calibration	./scd30.c	/^int16_t scd30_get_automatic_self_calibration(uint8_t *asc_enabled) {$/;"	f
+scd30_get_configured_address	./scd30.c	/^uint8_t scd30_get_configured_address() {$/;"	f
+scd30_get_data_ready	./scd30.c	/^int16_t scd30_get_data_ready(uint16_t *data_ready) {$/;"	f
+scd30_get_driver_version	./scd30.c	/^const char *scd30_get_driver_version() {$/;"	f
+scd30_probe	./scd30.c	/^int16_t scd30_probe() {$/;"	f
+scd30_read_measurement	./scd30.c	/^int16_t scd30_read_measurement(float32_t *co2_ppm, float32_t *temperature,$/;"	f
+scd30_read_serial	./scd30.c	/^int16_t scd30_read_serial(char *serial) {$/;"	f
+scd30_set_altitude	./scd30.c	/^int16_t scd30_set_altitude(uint16_t altitude) {$/;"	f
+scd30_set_forced_recalibration	./scd30.c	/^int16_t scd30_set_forced_recalibration(uint16_t co2_ppm) {$/;"	f
+scd30_set_measurement_interval	./scd30.c	/^int16_t scd30_set_measurement_interval(uint16_t interval_sec) {$/;"	f
+scd30_set_temperature_offset	./scd30.c	/^int16_t scd30_set_temperature_offset(uint16_t temperature_offset) {$/;"	f
+scd30_start_periodic_measurement	./scd30.c	/^int16_t scd30_start_periodic_measurement(uint16_t ambient_pressure_mbar) {$/;"	f
+scd30_stop_periodic_measurement	./scd30.c	/^int16_t scd30_stop_periodic_measurement() {$/;"	f
+scd_common_dir	./Makefile	/^scd_common_dir := .$/;"	m
+scd_common_objects	./Makefile	/^scd_common_objects := scd_git_version.o$/;"	m
+scl	./sw_i2c/sample-implementations/Nordic_nRF5_series/sensirion_sw_i2c_implementation.c	/^uint32_t scl;$/;"	v
+sclPinRegAddr	./sw_i2c/sample-implementations/Nordic_nRF5_series/sensirion_sw_i2c_implementation.c	/^volatile uint32_t *sclPinRegAddr;$/;"	v
+scl_dir_fd	./sw_i2c/sample-implementations/linux_user_space/sensirion_sw_i2c_implementation.c	/^static int scl_dir_fd;$/;"	v	file:
+scl_port	./sw_i2c/sample-implementations/Atmel_SAMD2_series/sensirion_sw_i2c_implementation.c	/^ioport_pin_t scl_port = IOPORT_CREATE_PIN(IOPORT_PORTA, 9);$/;"	v
+scl_val_fd	./sw_i2c/sample-implementations/linux_user_space/sensirion_sw_i2c_implementation.c	/^static int scl_val_fd;$/;"	v	file:
+sda	./sw_i2c/sample-implementations/Nordic_nRF5_series/sensirion_sw_i2c_implementation.c	/^uint32_t sda;$/;"	v
+sdaPinRegAddr	./sw_i2c/sample-implementations/Nordic_nRF5_series/sensirion_sw_i2c_implementation.c	/^volatile uint32_t *sdaPinRegAddr;$/;"	v
+sda_dir_fd	./sw_i2c/sample-implementations/linux_user_space/sensirion_sw_i2c_implementation.c	/^static int sda_dir_fd;$/;"	v	file:
+sda_port	./sw_i2c/sample-implementations/Atmel_SAMD2_series/sensirion_sw_i2c_implementation.c	/^ioport_pin_t sda_port = IOPORT_CREATE_PIN(IOPORT_PORTA, 8);$/;"	v
+sda_val_fd	./sw_i2c/sample-implementations/linux_user_space/sensirion_sw_i2c_implementation.c	/^static int sda_val_fd;$/;"	v	file:
+selected_i2c_bus	./hw_i2c/sample-implementations/arduino-mkrzero-multiple-i2c-buses/sensirion_hw_i2c_implementation.cpp	/^static uint8_t selected_i2c_bus = 0;$/;"	v	file:
+sendAddress	./hw_i2c/sample-implementations/arduino-alt-i2c/i2c_master_lib.cpp	/^uint8_t I2C::sendAddress(uint8_t i2cAddress) {$/;"	f	class:I2C
+sendByte	./hw_i2c/sample-implementations/arduino-alt-i2c/i2c_master_lib.cpp	/^uint8_t I2C::sendByte(uint8_t i2cData) {$/;"	f	class:I2C
+sensirion_SCL_in	./sw_i2c/sample-implementations/Atmel_SAMD2_series/sensirion_sw_i2c_implementation.c	/^void sensirion_SCL_in(void) {$/;"	f
+sensirion_SCL_in	./sw_i2c/sample-implementations/Nordic_nRF5_series/sensirion_sw_i2c_implementation.c	/^void sensirion_SCL_in(void) {$/;"	f
+sensirion_SCL_in	./sw_i2c/sample-implementations/STM32F1_series/sensirion_sw_i2c_implementation.c	/^void sensirion_SCL_in(void) {$/;"	f
+sensirion_SCL_in	./sw_i2c/sample-implementations/linux_user_space/sensirion_sw_i2c_implementation.c	/^void sensirion_SCL_in(void) {$/;"	f
+sensirion_SCL_in	./sw_i2c/sample-implementations/mbed/sensirion_sw_i2c_implementation.cpp	/^void sensirion_SCL_in(void) {$/;"	f
+sensirion_SCL_in	./sw_i2c/sensirion_sw_i2c_implementation.c	/^void sensirion_SCL_in(void) {$/;"	f
+sensirion_SCL_out	./sw_i2c/sample-implementations/Atmel_SAMD2_series/sensirion_sw_i2c_implementation.c	/^void sensirion_SCL_out(void) {$/;"	f
+sensirion_SCL_out	./sw_i2c/sample-implementations/Nordic_nRF5_series/sensirion_sw_i2c_implementation.c	/^void sensirion_SCL_out(void) {$/;"	f
+sensirion_SCL_out	./sw_i2c/sample-implementations/STM32F1_series/sensirion_sw_i2c_implementation.c	/^void sensirion_SCL_out(void) {$/;"	f
+sensirion_SCL_out	./sw_i2c/sample-implementations/linux_user_space/sensirion_sw_i2c_implementation.c	/^void sensirion_SCL_out(void) {$/;"	f
+sensirion_SCL_out	./sw_i2c/sample-implementations/mbed/sensirion_sw_i2c_implementation.cpp	/^void sensirion_SCL_out(void) {$/;"	f
+sensirion_SCL_out	./sw_i2c/sensirion_sw_i2c_implementation.c	/^void sensirion_SCL_out(void) {$/;"	f
+sensirion_SCL_read	./sw_i2c/sample-implementations/Atmel_SAMD2_series/sensirion_sw_i2c_implementation.c	/^uint8_t sensirion_SCL_read(void) {$/;"	f
+sensirion_SCL_read	./sw_i2c/sample-implementations/Nordic_nRF5_series/sensirion_sw_i2c_implementation.c	/^uint8_t sensirion_SCL_read(void) {$/;"	f
+sensirion_SCL_read	./sw_i2c/sample-implementations/STM32F1_series/sensirion_sw_i2c_implementation.c	/^uint8_t sensirion_SCL_read(void) {$/;"	f
+sensirion_SCL_read	./sw_i2c/sample-implementations/linux_user_space/sensirion_sw_i2c_implementation.c	/^uint8_t sensirion_SCL_read(void) {$/;"	f
+sensirion_SCL_read	./sw_i2c/sample-implementations/mbed/sensirion_sw_i2c_implementation.cpp	/^uint8_t sensirion_SCL_read(void) {$/;"	f
+sensirion_SCL_read	./sw_i2c/sensirion_sw_i2c_implementation.c	/^uint8_t sensirion_SCL_read(void) {$/;"	f
+sensirion_SDA_in	./sw_i2c/sample-implementations/Atmel_SAMD2_series/sensirion_sw_i2c_implementation.c	/^void sensirion_SDA_in(void) {$/;"	f
+sensirion_SDA_in	./sw_i2c/sample-implementations/Nordic_nRF5_series/sensirion_sw_i2c_implementation.c	/^void sensirion_SDA_in(void) {$/;"	f
+sensirion_SDA_in	./sw_i2c/sample-implementations/STM32F1_series/sensirion_sw_i2c_implementation.c	/^void sensirion_SDA_in(void) {$/;"	f
+sensirion_SDA_in	./sw_i2c/sample-implementations/linux_user_space/sensirion_sw_i2c_implementation.c	/^void sensirion_SDA_in(void) {$/;"	f
+sensirion_SDA_in	./sw_i2c/sample-implementations/mbed/sensirion_sw_i2c_implementation.cpp	/^void sensirion_SDA_in(void) {$/;"	f
+sensirion_SDA_in	./sw_i2c/sensirion_sw_i2c_implementation.c	/^void sensirion_SDA_in(void) {$/;"	f
+sensirion_SDA_out	./sw_i2c/sample-implementations/Atmel_SAMD2_series/sensirion_sw_i2c_implementation.c	/^void sensirion_SDA_out(void) {$/;"	f
+sensirion_SDA_out	./sw_i2c/sample-implementations/Nordic_nRF5_series/sensirion_sw_i2c_implementation.c	/^void sensirion_SDA_out(void) {$/;"	f
+sensirion_SDA_out	./sw_i2c/sample-implementations/STM32F1_series/sensirion_sw_i2c_implementation.c	/^void sensirion_SDA_out(void) {$/;"	f
+sensirion_SDA_out	./sw_i2c/sample-implementations/linux_user_space/sensirion_sw_i2c_implementation.c	/^void sensirion_SDA_out(void) {$/;"	f
+sensirion_SDA_out	./sw_i2c/sample-implementations/mbed/sensirion_sw_i2c_implementation.cpp	/^void sensirion_SDA_out(void) {$/;"	f
+sensirion_SDA_out	./sw_i2c/sensirion_sw_i2c_implementation.c	/^void sensirion_SDA_out(void) {$/;"	f
+sensirion_SDA_read	./sw_i2c/sample-implementations/Atmel_SAMD2_series/sensirion_sw_i2c_implementation.c	/^uint8_t sensirion_SDA_read(void) {$/;"	f
+sensirion_SDA_read	./sw_i2c/sample-implementations/Nordic_nRF5_series/sensirion_sw_i2c_implementation.c	/^uint8_t sensirion_SDA_read(void) {$/;"	f
+sensirion_SDA_read	./sw_i2c/sample-implementations/STM32F1_series/sensirion_sw_i2c_implementation.c	/^uint8_t sensirion_SDA_read(void) {$/;"	f
+sensirion_SDA_read	./sw_i2c/sample-implementations/linux_user_space/sensirion_sw_i2c_implementation.c	/^uint8_t sensirion_SDA_read(void) {$/;"	f
+sensirion_SDA_read	./sw_i2c/sample-implementations/mbed/sensirion_sw_i2c_implementation.cpp	/^uint8_t sensirion_SDA_read(void) {$/;"	f
+sensirion_SDA_read	./sw_i2c/sensirion_sw_i2c_implementation.c	/^uint8_t sensirion_SDA_read(void) {$/;"	f
+sensirion_common_check_crc	./sensirion_common.c	/^int8_t sensirion_common_check_crc(uint8_t *data, uint16_t count,$/;"	f
+sensirion_common_dir	./Makefile	/^sensirion_common_dir := .$/;"	m
+sensirion_common_generate_crc	./sensirion_common.c	/^uint8_t sensirion_common_generate_crc(uint8_t *data, uint16_t count) {$/;"	f
+sensirion_common_objects	./Makefile	/^sensirion_common_objects := sensirion_common.o$/;"	m
+sensirion_fill_cmd_send_buf	./sensirion_common.c	/^uint16_t sensirion_fill_cmd_send_buf(uint8_t *buf, uint16_t cmd,$/;"	f
+sensirion_i2c_delayed_read_cmd	./sensirion_common.c	/^int16_t sensirion_i2c_delayed_read_cmd(uint8_t address, uint16_t cmd,$/;"	f
+sensirion_i2c_init	./hw_i2c/sample-implementations/Atmel_SAMD2_series/sensirion_hw_i2c_implementation.c	/^void sensirion_i2c_init(void) {$/;"	f
+sensirion_i2c_init	./hw_i2c/sample-implementations/Nordic_nRF5_series/sensirion_hw_i2c_implementation.c	/^void sensirion_i2c_init(void) {$/;"	f
+sensirion_i2c_init	./hw_i2c/sample-implementations/STM32F1_series/sensirion_hw_i2c_implementation.c	/^void sensirion_i2c_init(void) {$/;"	f
+sensirion_i2c_init	./hw_i2c/sample-implementations/arduino-alt-i2c/sensirion_hw_i2c_implementation.cpp	/^void sensirion_i2c_init(void) {$/;"	f
+sensirion_i2c_init	./hw_i2c/sample-implementations/arduino-mkrzero-multiple-i2c-buses/sensirion_hw_i2c_implementation.cpp	/^void sensirion_i2c_init(void) {$/;"	f
+sensirion_i2c_init	./hw_i2c/sample-implementations/arduino/sensirion_hw_i2c_implementation.cpp	/^void sensirion_i2c_init(void) {$/;"	f
+sensirion_i2c_init	./hw_i2c/sample-implementations/linux_user_space/sensirion_hw_i2c_implementation.c	/^void sensirion_i2c_init(void) {$/;"	f
+sensirion_i2c_init	./hw_i2c/sample-implementations/mbed/sensirion_hw_i2c_implementation.cpp	/^void sensirion_i2c_init(void) {$/;"	f
+sensirion_i2c_init	./hw_i2c/sensirion_hw_i2c_implementation.c	/^void sensirion_i2c_init(void) {$/;"	f
+sensirion_i2c_init	./sw_i2c/sensirion_sw_i2c.c	/^void sensirion_i2c_init(void) {$/;"	f
+sensirion_i2c_read	./hw_i2c/sample-implementations/Atmel_SAMD2_series/sensirion_hw_i2c_implementation.c	/^int8_t sensirion_i2c_read(uint8_t address, uint8_t *data, uint16_t count) {$/;"	f
+sensirion_i2c_read	./hw_i2c/sample-implementations/Nordic_nRF5_series/sensirion_hw_i2c_implementation.c	/^int8_t sensirion_i2c_read(uint8_t address, uint8_t *data, uint16_t count) {$/;"	f
+sensirion_i2c_read	./hw_i2c/sample-implementations/STM32F1_series/sensirion_hw_i2c_implementation.c	/^int8_t sensirion_i2c_read(uint8_t address, uint8_t *data, uint16_t count) {$/;"	f
+sensirion_i2c_read	./hw_i2c/sample-implementations/arduino-alt-i2c/sensirion_hw_i2c_implementation.cpp	/^int8_t sensirion_i2c_read(uint8_t address, uint8_t *data, uint16_t count) {$/;"	f
+sensirion_i2c_read	./hw_i2c/sample-implementations/arduino-mkrzero-multiple-i2c-buses/sensirion_hw_i2c_implementation.cpp	/^int8_t sensirion_i2c_read(uint8_t address, uint8_t *data, uint16_t count) {$/;"	f
+sensirion_i2c_read	./hw_i2c/sample-implementations/arduino/sensirion_hw_i2c_implementation.cpp	/^int8_t sensirion_i2c_read(uint8_t address, uint8_t *data, uint16_t count) {$/;"	f
+sensirion_i2c_read	./hw_i2c/sample-implementations/linux_user_space/sensirion_hw_i2c_implementation.c	/^int8_t sensirion_i2c_read(uint8_t address, uint8_t *data, uint16_t count) {$/;"	f
+sensirion_i2c_read	./hw_i2c/sample-implementations/mbed/sensirion_hw_i2c_implementation.cpp	/^int8_t sensirion_i2c_read(uint8_t address, uint8_t *data, uint16_t count) {$/;"	f
+sensirion_i2c_read	./hw_i2c/sensirion_hw_i2c_implementation.c	/^int8_t sensirion_i2c_read(uint8_t address, uint8_t *data, uint16_t count) {$/;"	f
+sensirion_i2c_read	./sw_i2c/sensirion_sw_i2c.c	/^int8_t sensirion_i2c_read(uint8_t address, uint8_t *data, uint16_t count) {$/;"	f
+sensirion_i2c_read_byte	./sw_i2c/sensirion_sw_i2c.c	/^static uint8_t sensirion_i2c_read_byte(uint8_t ack) {$/;"	f	file:
+sensirion_i2c_read_bytes	./sensirion_common.c	/^int16_t sensirion_i2c_read_bytes(uint8_t address, uint8_t *data,$/;"	f
+sensirion_i2c_read_cmd	./sensirion_common.c	/^int16_t sensirion_i2c_read_cmd(uint8_t address, uint16_t cmd,$/;"	f
+sensirion_i2c_read_words	./sensirion_common.c	/^int16_t sensirion_i2c_read_words(uint8_t address, uint16_t *data_words,$/;"	f
+sensirion_i2c_release	./hw_i2c/sample-implementations/Atmel_SAMD2_series/sensirion_hw_i2c_implementation.c	/^void sensirion_i2c_release(void) {$/;"	f
+sensirion_i2c_release	./hw_i2c/sample-implementations/Nordic_nRF5_series/sensirion_hw_i2c_implementation.c	/^void sensirion_i2c_release(void) {$/;"	f
+sensirion_i2c_release	./hw_i2c/sample-implementations/STM32F1_series/sensirion_hw_i2c_implementation.c	/^void sensirion_i2c_release(void) {$/;"	f
+sensirion_i2c_release	./hw_i2c/sample-implementations/arduino-alt-i2c/sensirion_hw_i2c_implementation.cpp	/^void sensirion_i2c_release(void) {$/;"	f
+sensirion_i2c_release	./hw_i2c/sample-implementations/arduino-mkrzero-multiple-i2c-buses/sensirion_hw_i2c_implementation.cpp	/^void sensirion_i2c_release(void) {$/;"	f
+sensirion_i2c_release	./hw_i2c/sample-implementations/arduino/sensirion_hw_i2c_implementation.cpp	/^void sensirion_i2c_release(void) {$/;"	f
+sensirion_i2c_release	./hw_i2c/sample-implementations/linux_user_space/sensirion_hw_i2c_implementation.c	/^void sensirion_i2c_release(void) {$/;"	f
+sensirion_i2c_release	./hw_i2c/sample-implementations/mbed/sensirion_hw_i2c_implementation.cpp	/^void sensirion_i2c_release(void) {$/;"	f
+sensirion_i2c_release	./hw_i2c/sensirion_hw_i2c_implementation.c	/^void sensirion_i2c_release(void) {$/;"	f
+sensirion_i2c_release	./sw_i2c/sensirion_sw_i2c.c	/^void sensirion_i2c_release(void) {$/;"	f
+sensirion_i2c_select_bus	./hw_i2c/sample-implementations/arduino-mkrzero-multiple-i2c-buses/sensirion_hw_i2c_implementation.cpp	/^int16_t sensirion_i2c_select_bus(uint8_t bus_idx) {$/;"	f
+sensirion_i2c_select_bus	./hw_i2c/sensirion_hw_i2c_implementation.c	/^int16_t sensirion_i2c_select_bus(uint8_t bus_idx) {$/;"	f
+sensirion_i2c_start	./sw_i2c/sensirion_sw_i2c.c	/^static int8_t sensirion_i2c_start(void) {$/;"	f	file:
+sensirion_i2c_stop	./sw_i2c/sensirion_sw_i2c.c	/^static void sensirion_i2c_stop(void) {$/;"	f	file:
+sensirion_i2c_write	./hw_i2c/sample-implementations/Atmel_SAMD2_series/sensirion_hw_i2c_implementation.c	/^int8_t sensirion_i2c_write(uint8_t address, const uint8_t *data,$/;"	f
+sensirion_i2c_write	./hw_i2c/sample-implementations/Nordic_nRF5_series/sensirion_hw_i2c_implementation.c	/^int8_t sensirion_i2c_write(uint8_t address, const uint8_t *data,$/;"	f
+sensirion_i2c_write	./hw_i2c/sample-implementations/STM32F1_series/sensirion_hw_i2c_implementation.c	/^int8_t sensirion_i2c_write(uint8_t address, const uint8_t *data,$/;"	f
+sensirion_i2c_write	./hw_i2c/sample-implementations/arduino-alt-i2c/sensirion_hw_i2c_implementation.cpp	/^int8_t sensirion_i2c_write(uint8_t address, const uint8_t *data,$/;"	f
+sensirion_i2c_write	./hw_i2c/sample-implementations/arduino-mkrzero-multiple-i2c-buses/sensirion_hw_i2c_implementation.cpp	/^int8_t sensirion_i2c_write(uint8_t address, const uint8_t *data,$/;"	f
+sensirion_i2c_write	./hw_i2c/sample-implementations/arduino/sensirion_hw_i2c_implementation.cpp	/^int8_t sensirion_i2c_write(uint8_t address, const uint8_t *data,$/;"	f
+sensirion_i2c_write	./hw_i2c/sample-implementations/linux_user_space/sensirion_hw_i2c_implementation.c	/^int8_t sensirion_i2c_write(uint8_t address, const uint8_t *data,$/;"	f
+sensirion_i2c_write	./hw_i2c/sample-implementations/mbed/sensirion_hw_i2c_implementation.cpp	/^int8_t sensirion_i2c_write(uint8_t address, const uint8_t *data,$/;"	f
+sensirion_i2c_write	./hw_i2c/sensirion_hw_i2c_implementation.c	/^int8_t sensirion_i2c_write(uint8_t address, const uint8_t *data,$/;"	f
+sensirion_i2c_write	./sw_i2c/sensirion_sw_i2c.c	/^int8_t sensirion_i2c_write(uint8_t address, const uint8_t *data,$/;"	f
+sensirion_i2c_write_byte	./sw_i2c/sensirion_sw_i2c.c	/^static int8_t sensirion_i2c_write_byte(uint8_t data) {$/;"	f	file:
+sensirion_i2c_write_cmd	./sensirion_common.c	/^int16_t sensirion_i2c_write_cmd(uint8_t address, uint16_t command) {$/;"	f
+sensirion_i2c_write_cmd_with_args	./sensirion_common.c	/^int16_t sensirion_i2c_write_cmd_with_args(uint8_t address, uint16_t command,$/;"	f
+sensirion_init_pins	./sw_i2c/sample-implementations/Atmel_SAMD2_series/sensirion_sw_i2c_implementation.c	/^void sensirion_init_pins(void) {$/;"	f
+sensirion_init_pins	./sw_i2c/sample-implementations/Nordic_nRF5_series/sensirion_sw_i2c_implementation.c	/^void sensirion_init_pins(void) {$/;"	f
+sensirion_init_pins	./sw_i2c/sample-implementations/STM32F1_series/sensirion_sw_i2c_implementation.c	/^void sensirion_init_pins(void) {$/;"	f
+sensirion_init_pins	./sw_i2c/sample-implementations/linux_user_space/sensirion_sw_i2c_implementation.c	/^void sensirion_init_pins(void) {$/;"	f
+sensirion_init_pins	./sw_i2c/sample-implementations/mbed/sensirion_sw_i2c_implementation.cpp	/^void sensirion_init_pins(void) {$/;"	f
+sensirion_init_pins	./sw_i2c/sensirion_sw_i2c_implementation.c	/^void sensirion_init_pins(void) {$/;"	f
+sensirion_release_pins	./sw_i2c/sample-implementations/Atmel_SAMD2_series/sensirion_sw_i2c_implementation.c	/^void sensirion_release_pins(void) {$/;"	f
+sensirion_release_pins	./sw_i2c/sample-implementations/Nordic_nRF5_series/sensirion_sw_i2c_implementation.c	/^void sensirion_release_pins(void) {$/;"	f
+sensirion_release_pins	./sw_i2c/sample-implementations/STM32F1_series/sensirion_sw_i2c_implementation.c	/^void sensirion_release_pins(void) {$/;"	f
+sensirion_release_pins	./sw_i2c/sample-implementations/linux_user_space/sensirion_sw_i2c_implementation.c	/^void sensirion_release_pins(void) {$/;"	f
+sensirion_release_pins	./sw_i2c/sample-implementations/mbed/sensirion_sw_i2c_implementation.cpp	/^void sensirion_release_pins(void) {$/;"	f
+sensirion_release_pins	./sw_i2c/sensirion_sw_i2c_implementation.c	/^void sensirion_release_pins(void) {$/;"	f
+sensirion_sleep_usec	./hw_i2c/sample-implementations/Atmel_SAMD2_series/sensirion_hw_i2c_implementation.c	/^void sensirion_sleep_usec(uint32_t useconds) {$/;"	f
+sensirion_sleep_usec	./hw_i2c/sample-implementations/Nordic_nRF5_series/sensirion_hw_i2c_implementation.c	/^void sensirion_sleep_usec(uint32_t useconds) {$/;"	f
+sensirion_sleep_usec	./hw_i2c/sample-implementations/STM32F1_series/sensirion_hw_i2c_implementation.c	/^void sensirion_sleep_usec(uint32_t useconds) {$/;"	f
+sensirion_sleep_usec	./hw_i2c/sample-implementations/arduino-alt-i2c/sensirion_hw_i2c_implementation.cpp	/^void sensirion_sleep_usec(uint32_t useconds) {$/;"	f
+sensirion_sleep_usec	./hw_i2c/sample-implementations/arduino-mkrzero-multiple-i2c-buses/sensirion_hw_i2c_implementation.cpp	/^void sensirion_sleep_usec(uint32_t useconds) {$/;"	f
+sensirion_sleep_usec	./hw_i2c/sample-implementations/arduino/sensirion_hw_i2c_implementation.cpp	/^void sensirion_sleep_usec(uint32_t useconds) {$/;"	f
+sensirion_sleep_usec	./hw_i2c/sample-implementations/linux_user_space/sensirion_hw_i2c_implementation.c	/^void sensirion_sleep_usec(uint32_t useconds) {$/;"	f
+sensirion_sleep_usec	./hw_i2c/sample-implementations/mbed/sensirion_hw_i2c_implementation.cpp	/^void sensirion_sleep_usec(uint32_t useconds) {$/;"	f
+sensirion_sleep_usec	./hw_i2c/sensirion_hw_i2c_implementation.c	/^void sensirion_sleep_usec(uint32_t useconds) {$/;"	f
+sensirion_sleep_usec	./sw_i2c/sample-implementations/Atmel_SAMD2_series/sensirion_sw_i2c_implementation.c	/^void sensirion_sleep_usec(uint32_t useconds) {$/;"	f
+sensirion_sleep_usec	./sw_i2c/sample-implementations/Nordic_nRF5_series/sensirion_sw_i2c_implementation.c	/^void sensirion_sleep_usec(uint32_t useconds) {$/;"	f
+sensirion_sleep_usec	./sw_i2c/sample-implementations/STM32F1_series/sensirion_sw_i2c_implementation.c	/^void sensirion_sleep_usec(uint32_t useconds) {$/;"	f
+sensirion_sleep_usec	./sw_i2c/sample-implementations/linux_user_space/sensirion_sw_i2c_implementation.c	/^void sensirion_sleep_usec(uint32_t useconds) {$/;"	f
+sensirion_sleep_usec	./sw_i2c/sample-implementations/mbed/sensirion_sw_i2c_implementation.cpp	/^void sensirion_sleep_usec(uint32_t useconds) {$/;"	f
+sensirion_sleep_usec	./sw_i2c/sensirion_sw_i2c_implementation.c	/^void sensirion_sleep_usec(uint32_t useconds) {$/;"	f
+sensirion_wait_while_clock_stretching	./sw_i2c/sensirion_sw_i2c.c	/^static int8_t sensirion_wait_while_clock_stretching(void) {$/;"	f	file:
+setSpeed	./hw_i2c/sample-implementations/arduino-alt-i2c/i2c_master_lib.cpp	/^void I2C::setSpeed(uint8_t _fast) {$/;"	f	class:I2C
+start	./hw_i2c/sample-implementations/arduino-alt-i2c/i2c_master_lib.cpp	/^uint8_t I2C::start() {$/;"	f	class:I2C
+stop	./hw_i2c/sample-implementations/arduino-alt-i2c/i2c_master_lib.cpp	/^uint8_t I2C::stop() {$/;"	f	class:I2C
+sw_i2c_dir	./Makefile	/^sw_i2c_dir := ${sensirion_common_dir}\/sw_i2c$/;"	m
+sw_objects	./Makefile	/^sw_objects := sensirion_sw_i2c.o sensirion_sw_i2c_implementation.o$/;"	m
+timeOut	./hw_i2c/sample-implementations/arduino-alt-i2c/i2c_master_lib.cpp	/^void I2C::timeOut(uint16_t _timeOut) {$/;"	f	class:I2C
+timeOutDelay	./hw_i2c/sample-implementations/arduino-alt-i2c/i2c_master_lib.cpp	/^uint16_t I2C::timeOutDelay = 0;$/;"	m	class:I2C	file:
+timeOutDelay	./hw_i2c/sample-implementations/arduino-alt-i2c/i2c_master_lib.h	/^    static uint16_t timeOutDelay;$/;"	m	class:I2C
+totalBytes	./hw_i2c/sample-implementations/arduino-alt-i2c/i2c_master_lib.cpp	/^uint8_t I2C::totalBytes = 0;$/;"	m	class:I2C	file:
+totalBytes	./hw_i2c/sample-implementations/arduino-alt-i2c/i2c_master_lib.h	/^    static uint8_t totalBytes;$/;"	m	class:I2C
+write	./hw_i2c/sample-implementations/arduino-alt-i2c/i2c_master_lib.cpp	/^uint8_t I2C::write(int address, int registerAddress) {$/;"	f	class:I2C
+write	./hw_i2c/sample-implementations/arduino-alt-i2c/i2c_master_lib.cpp	/^uint8_t I2C::write(int address, int registerAddress, int data) {$/;"	f	class:I2C
+write	./hw_i2c/sample-implementations/arduino-alt-i2c/i2c_master_lib.cpp	/^uint8_t I2C::write(uint8_t address, uint8_t registerAddress) {$/;"	f	class:I2C
+write	./hw_i2c/sample-implementations/arduino-alt-i2c/i2c_master_lib.cpp	/^uint8_t I2C::write(uint8_t address, uint8_t registerAddress, char *data) {$/;"	f	class:I2C
+write	./hw_i2c/sample-implementations/arduino-alt-i2c/i2c_master_lib.cpp	/^uint8_t I2C::write(uint8_t address, uint8_t registerAddress, uint8_t *data,$/;"	f	class:I2C
+write	./hw_i2c/sample-implementations/arduino-alt-i2c/i2c_master_lib.cpp	/^uint8_t I2C::write(uint8_t address, uint8_t registerAddress, uint8_t data) {$/;"	f	class:I2C
+write_or_exit	./sw_i2c/sample-implementations/linux_user_space/sensirion_sw_i2c_implementation.c	/^static void write_or_exit(int fd, const char *buf) {$/;"	f	file:
