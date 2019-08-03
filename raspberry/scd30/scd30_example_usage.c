@@ -46,7 +46,7 @@ int main(void) {
     float32_t co2_ppm, temperature, relative_humidity;
     uint16_t data_ready;
     int16_t ret;
-    int16_t interval_in_seconds = 5;
+    int16_t interval_in_seconds = 10;
 
     /* Initialize I2C */
     sensirion_i2c_init();
@@ -93,7 +93,7 @@ int main(void) {
                 }
             } else {
                 //printf("measurement not ready\n");
-                usleep(1000000);
+                usleep(500000);
                 continue;
             }
 
