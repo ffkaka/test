@@ -40,7 +40,7 @@ PulsePlayer::PulsePlayer(int rate, int bitDepth, int channels, const char* dev) 
 			ss.format = PA_SAMPLE_S16LE;
 			break;
 	}
-	strDev = pa_xstrdup((dev)? dev : "offload0");
+	strDev = pa_xstrdup((dev)? dev : "default");
 }
 
 PulsePlayer::~PulsePlayer() {
@@ -79,7 +79,7 @@ int PulsePlayer::createStream() {
 	LOGS_I("channels=%d\n", map.channels);
 
 	int error = 0;
-	mPlayer = pa_simple_new(NULL, "loop-test", PA_STREAM_PLAYBACK, strDev, "playback", &ss, NULL, &attr, &error);
+	mPlayer = pa_simple_new(NULL, "psimple-player", PA_STREAM_PLAYBACK, strDev, "playback", &ss, NULL, &attr, &error);
 	if (!mPlayer) {
 		LOGS_E("## Fail to Create simple playstream (%s)\n", pa_strerror(error));
 	}
