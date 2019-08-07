@@ -1,11 +1,10 @@
-
 #include <assert.h>
-#include <SdBusProxy.h>
+#include "SdBusProxy.h"
 
 #ifdef LOG_TAG
 #endif
 #define LOG_TAG "<sd-prox>: "
-#include <logs.h>
+#include "logs.h"
 
 _SdBusProxy_::_SdBusProxy_() {
 	vtable = NULL;
