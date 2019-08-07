@@ -97,8 +97,8 @@ void PulseInputHandler::PS_FreeStream() {
 	freeStream();
 }
 
-void PulseInputHandler::PS_readDataSync(void* buf, size_t bytes) {
-	readDataSync(buf, bytes);
+void PulseInputHandler::PS_readData(void* buf, size_t bytes) {
+	readData(buf, bytes);
 }
 
 void PulseInputHandler::createStream(const char* devName, const char *streamName) {
@@ -184,7 +184,7 @@ void PulseInputHandler::freeStream() {
 	}
 }
 
-void PulseInputHandler::readDataSync(void *buf, size_t bytes) {
+void PulseInputHandler::readData(void *buf, size_t bytes) {
 	static uint32_t totalFeed = 0;
 	pthread_mutex_lock(&mutex);
 	if (gBuff.getReadableSize() < bytes) {
