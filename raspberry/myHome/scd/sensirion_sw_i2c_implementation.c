@@ -47,8 +47,8 @@
  * Both lines must be equipped with pull-up resistors appropriate to the bus
  * frequency.
  */
-#define GPIO_PIN_SCL 21
-#define GPIO_PIN_SDA 20
+//#define GPIO_PIN_SCL 21
+//#define GPIO_PIN_SDA 20
 #define GPIO_DIR "/sys/class/gpio/"
 
 #define __str(x) #x

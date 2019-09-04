@@ -6,6 +6,7 @@ include (FindPkgConfig)
 
 set (CMAKE_CXX_STANDARD 14)
 find_package(Threads REQUIRED)
+add_definitions (-DGPIO_PIN_SCL=21 -DGPIO_PIN_SDA=20)
 
 add_executable (
 	home-ctrl
@@ -38,4 +39,5 @@ target_link_libraries (
 	home-ctrl
 	${PULSE_SIMPLE_LINK_LIBRARIES}
 	${PULSE_LINK_LIBRARIES}
+	Threads::Threads
 )

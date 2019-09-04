@@ -39,13 +39,20 @@
 #include <unistd.h> /* sleep, usleep */
 #include <thread>
 #include <chrono>
+#include <iostream>
 //#define printf(...)
 //#define sleep(...)
 //#define usleep(...)
-#define STR_TIME_FORMAT      "%y%m%d/%H:%M:%S"
+#define STR_TIME_FORMAT      "%y%m%d-%H:%M:%S"
 
-static void checkTimer(uint32_t mSec)
+struct _user_data_ {
+	bool isRepeat;
+	int16_t Sec;
+};
+
+static void checkTimer(void* data)
 {
+	auto udata = static_cast<struct _user_data_*>(data);
 	bool run = true;
     float32_t co2_ppm, temperature, relative_humidity;
 	uint16_t data_ready, ret;
@@ -68,7 +75,7 @@ static void checkTimer(uint32_t mSec)
 					clock_gettime(CLOCK_REALTIME, &tp);
 					localtime_r((time_t *)&tp.tv_sec, &tm_now);
 					strftime(buf, 32, STR_TIME_FORMAT, &tm_now);
-					printf("[%s] co2 concentr: %0.2f ppm, "
+					printf("[%s] co2 concentr: %4.2f ppm, "
 							"Temp: %0.2f C, "
 							"Humidity: %0.2f %%RH\n",
 							buf,co2_ppm,
@@ -78,14 +85,20 @@ static void checkTimer(uint32_t mSec)
 				}
 			} else {
 				//printf("measurement not ready\n");
-				std::this_thread::sleep_for(std::chrono::milliseconds(50));
+				std::this_thread::sleep_for(std::chrono::milliseconds(500));
 				continue;
 			}
 
 		} else {
-			printf("error reading data ready flag\n");
+			//printf("error reading data ready flag\n");
 		}
-		std::this_thread::sleep_for(std::chrono::milliseconds(50));
+		std::this_thread::sleep_for(std::chrono::milliseconds(500));
+	}
+
+	if (udata->isRepeat) {
+		std::this_thread::sleep_for(std::chrono::seconds(udata->Sec));
+		std::thread th(checkTimer, udata); 
+		th.detach();
 	}
 }
 
@@ -94,7 +107,9 @@ int main(void) {
     float32_t co2_ppm, temperature, relative_humidity;
     uint16_t data_ready;
     int16_t ret;
-    int16_t interval_in_seconds = 10;
+    int16_t interval_in_seconds = 3;
+	//static int16_t isRepeat = 1;
+	struct _user_data_ udata = {true, interval_in_seconds};
 
     /* Initialize I2C */
     sensirion_i2c_init();
@@ -104,54 +119,25 @@ int main(void) {
      */
     while (scd30_probe() != STATUS_OK) {
         printf("SCD30 sensor probing failed\n");
-        sleep(1);
+		std::this_thread::sleep_for(std::chrono::seconds(1));
     }
     printf("SCD30 sensor probing successful\n");
 
-    scd30_set_measurement_interval(interval_in_seconds);
-    usleep(20000);
+    scd30_set_measurement_interval(1);
+	std::this_thread::sleep_for(std::chrono::microseconds(20000));
     scd30_start_periodic_measurement(0);
-    sleep(interval_in_seconds);
+
+	std::thread th(checkTimer, &udata);
+	th.detach();
 
     while (1) {
-        /* Measure co2, temperature and relative humidity and store into
-         * variables.
-         */
-        ret = scd30_get_data_ready(&data_ready);
-        if (ret == STATUS_OK) {
-            if (data_ready) {
-                ret = scd30_read_measurement(&co2_ppm, &temperature,
-                                             &relative_humidity);
-                if (ret != STATUS_OK) {
-                    printf("error reading measurement\n");
-
-                } else {
-					struct timespec tp;
-					struct tm   tm_now;
-					char buf[32] = {0};
-					clock_gettime(CLOCK_REALTIME, &tp);
-					localtime_r((time_t *)&tp.tv_sec, &tm_now);
-					strftime(buf, 32, STR_TIME_FORMAT, &tm_now);
-                    printf("[%s] co2 concentr: %0.2f ppm, "
-                           "Temp: %0.2f C, "
-                           "Humidity: %0.2f %%RH\n",
-                           buf,co2_ppm,
-						   temperature,
-						   relative_humidity);
-                }
-            } else {
-                //printf("measurement not ready\n");
-                usleep(500000);
-                continue;
-            }
-
-        } else {
-            printf("error reading data ready flag\n");
-        }
-
-        sleep(interval_in_seconds);
-    }
-
+		char in;
+		std::cin >> in;
+		if (in == 'x' || in == 'X') {
+			udata.isRepeat = false;
+			break;
+		}
+	}
     scd30_stop_periodic_measurement();
     return 0;
 }
