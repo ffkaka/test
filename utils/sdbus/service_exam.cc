@@ -3,8 +3,8 @@
 #include <errno.h>
 #include <systemd/sd-bus.h>
 
-#define BUS_OBJ "/kakao/miniN/Audio"
-#define BUS_INF "kakao.miniN.Audio"
+#define BUS_OBJ "/kaka/utils/test"
+#define BUS_INF "kaka.utils.test"
 
 static int method_multiply(sd_bus_message *m, void *userdata, sd_bus_error *ret_error) {
         int64_t x, y;
