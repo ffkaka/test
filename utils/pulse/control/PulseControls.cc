@@ -14,7 +14,7 @@
 // For get the pid in user space
 #include <sys/types.h>
 #include <sys/syscall.h>
-#include <PulseAsyncCtrl.h>
+#include "PulseControls.h"
 #ifdef LOG_TAG
 #undef LOG_TAG
 #endif

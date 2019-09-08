@@ -1,4 +1,4 @@
-cmake_minimum_required (VERSION 3.14)
+cmake_minimum_required (VERSION 3.1)
 project (sdbus-test CXX)
 
 include (FindPkgConfig)
@@ -43,12 +43,10 @@ include_directories (
 	client
 	${SYSD_INCLUDE_DIRS}
 )
-
 target_link_directories (
 	client PUBLIC
 	${SYSD_LIBRARY_DIRS}
 )
-
 target_link_libraries (
 	client
 	Threads::Threads

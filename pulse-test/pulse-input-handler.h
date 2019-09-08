@@ -73,7 +73,7 @@ class PulseInputHandler {
 
 		void PS_CreateStream(const char* devName = nullptr, const char* streamName = nullptr);
 		void PS_FreeStream();
-		void PS_readDataSync(void* buf, size_t bytes);
+		void PS_readData(void* buf, size_t bytes);
 
 	private:
 		char *stream_name;
@@ -95,7 +95,7 @@ class PulseInputHandler {
 
 		void createStream(const char* devName, const char* streamName);
 		void freeStream();
-		void readDataSync(void* buf, size_t bytes);
+		void readData(void* buf, size_t bytes);
 		static void* readThreadFunc(void* data);
 		void putData(uint8_t* buf, size_t size);
 };
