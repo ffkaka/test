@@ -11,7 +11,16 @@ add_executable(mptest
 	main.cc
 )
 
+add_executable(atest
+	test.cc
+)
+
 target_link_libraries(mptest
+	PUBLIC
+	OpenMP::OpenMP_CXX
+)
+
+target_link_libraries(atest
 	PUBLIC
 	OpenMP::OpenMP_CXX
 )

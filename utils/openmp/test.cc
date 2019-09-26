@@ -9,36 +9,34 @@
 
 using namespace std;
 #define MOD (0x7FFFl)
-#define ITER 100000000l
+#define ITER 2000000000l
+#define MAX 1e+12l
 
-int main(void) {
-	srand(time(NULL));
+int main(void)
+{
+	vector<int32_t> work;
+	work.resize(24, 0);
 	auto start = chrono::system_clock::now();
+	//int xi;
+	//double x;
 	for(int i = 0; i<ITER; ++i) {
-		int xi = rand() % MOD;
+		int xi = 3937923 % MOD;
 		double x = xi / (double)MOD;
-		if (x == 1.0) {
-			printf("%f\n", x);
-		}
 	}
 	auto end = chrono::system_clock::now();
 	chrono::duration<double> diff = end - start;
 	printf("Elapsted time : %f s\n", diff.count());
 
-	vector<int32_t> work;
-	work.resize(24, 0);
 	start = chrono::system_clock::now();
-#pragma omp parallel for
-	for (int i = 0; i<ITER; ++i) {
+#pragma omp parallel
+	{
 		int tid = omp_get_thread_num();
-		++work[tid];
-		int xi = rand() % MOD;
-		double x = xi / (double)MOD;
-		if (x == 1.0) {
-			printf("%f\n", x);
-		}
-		if (i == ITER -1) {
-			printf("Threas %d\n", omp_get_num_threads());
+#pragma omp for
+		for (int i = 0; i<ITER; ++i) {
+			int xi = 3937923 % 0x7FFFl;
+			double x = xi / (double)0x7FFFl;
+			//int tid = omp_get_thread_num();
+			//++work[tid];
 		}
 	}
 	end = chrono::system_clock::now();
@@ -47,5 +45,6 @@ int main(void) {
 	for(int i=0;i<24;++i) {
 		printf("Thread[%d]=%d\n", i, work[i]);
 	}
+	printf("%lf\n", MAX);
 	return 0;
 }
