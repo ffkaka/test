@@ -62,5 +62,6 @@ int SpeexSrc::process(int16_t* in, uint32_t inSamples)
 			&inSamples,
 			outb,
 			&outSamples);
+	return outSamples;
 }
 
