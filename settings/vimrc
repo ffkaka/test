@@ -44,6 +44,9 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 "
 "
+" ########### for Mac Color activation ###########
+" syntax on
+
 " ########### to use cscope ###########
 function! LoadCscope()
   let db = findfile("cscope.out", ".;")
