@@ -12,7 +12,6 @@ utils
 * systemd
 * speex
 
-
 raspberry
 ---------------------------------------------------------------
 ### A mini project using raspberry pi3 model B
