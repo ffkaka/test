@@ -5,23 +5,25 @@ include (FindPkgConfig)
 
 set (CMAKE_CXX_STANDARD 11)
 
-add_library(libka-src SHARED
-	SpeexSrc.cpp
+add_library(ka-src SHARED
+	SpeexSrc.cc
 )
 
 pkg_check_modules(DSP REQUIRED speexdsp)
 
 include_directories (
-	libka-src
+	ka-src
 	${DSP_INCLUDE_DIRS}
 )
 
 target_link_directories (
-	libka-src PUBLIC
+	ka-src PUBLIC
 	${DSP_LIBRARY_DIRS}
 )
 
 target_link_libraries (
-	libka-src
+	ka-src
 	${DSP_LINK_LIBRARIES}
 )
+
+install (TARGETS ka-src LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR})

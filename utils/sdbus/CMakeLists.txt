@@ -1,46 +1,54 @@
 cmake_minimum_required (VERSION 3.1)
-project (sdbus-test C
-	CXX)
+project (sdbus-test CXX)
 
 include (FindPkgConfig)
 
-set (CMAKE_CXX_STANDARD 14)
 find_package(Threads REQUIRED)
+set (CMAKE_CXX_STANDARD 11)
+set (CMAKE_CXX_COMPILER /usr/bin/clang++-6.0)
 
-add_executable(sdbus-test 
-	service_exam.c
+add_executable(server
+	service_exam.cc
+	SdBusProxy.cc
 )
 
-add_library(
-	fka-sdbus-proxy SHARED
+add_executable(client
+	client.cc
+)
+
+add_library(ka-SdBus SHARED
 	SdBusProxy.cc
 )
 
 pkg_check_modules(SYSD REQUIRED libsystemd)
 
 include_directories (
-	sdbus-test
-	${SYSD_INCLUDE_DIRS}
-)
-include_directories (
-	fka-sdbus-proxy
+	server
 	${SYSD_INCLUDE_DIRS}
 )
 
 target_link_directories (
-	sdbus-test PUBLIC
-	${SYSD_LIBRARY_DIRS}
-)
-target_link_directories (
-	fka-sdbus-proxy PUBLIC
+	server PUBLIC
 	${SYSD_LIBRARY_DIRS}
 )
 
 target_link_libraries (
-	sdbus-test
+	server
+	Threads::Threads
 	${SYSD_LINK_LIBRARIES}
 )
+
+
+include_directories (
+	client
+	${SYSD_INCLUDE_DIRS}
+)
+target_link_directories (
+	client PUBLIC
+	${SYSD_LIBRARY_DIRS}
+)
 target_link_libraries (
-	fka-sdbus-proxy
+	client
+	Threads::Threads
 	${SYSD_LINK_LIBRARIES}
 )

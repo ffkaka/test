@@ -1,10 +1,25 @@
 This is a private repository (ffkaka)
-=========================================
+===============================================================
 
-* A useful classes what I can use in practice
+* A useful wrappers
 * python, cpp, c, go
 
 
-First one I can see
-----------------------
+utils
+---------------------------------------------------------------
+### Open source wrappers
+* pulseaudio
+* systemd
+* speex
 
+raspberry
+---------------------------------------------------------------
+### A mini project using raspberry pi3 model B
+
+settings
+---------------------------------------------------------------
+### private setting files for linux
+
+bin
+---------------------------------------------------------------
+### private binary files for linux account

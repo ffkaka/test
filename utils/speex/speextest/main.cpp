@@ -6,6 +6,7 @@
 #include <fcntl.h>
 #include <unistd.h>
 #include <stdint.h>
+#include "SpeexSrc.h"
 
 #define CH (4)
 #define BUFSIZE (1024)
