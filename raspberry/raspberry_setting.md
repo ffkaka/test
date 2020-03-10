@@ -26,6 +26,8 @@ WiFi 를 사용하지 않고 싶은 경우
 
 한글 디코딩 및 입력을 위한 설정 
 --------------------------------
+* 한글 Locale 추가
+	* ko_KR.UTF-8 UTF-8 추가
 
 * 한글 문서가 깨지거나 한글 입력이 안되는 경우 아래와 같이 패키지 설정 만으로 해결이 된다
 
@@ -43,6 +45,52 @@ Transmission Daemon 설정
 Kodi 설정
 --------------------------------
 
-Kodi 설치는 아래와 같이 하면 된다
+* Kodi 설치는 아래와 같이 하면 된다
 	* `sudo apt install kodi`
+* systemd 설정
+	``` 
+	[Unit]
+	Description = Kodi Media Center
+
+# if you don't need the MySQL DB backend, this should be sufficient
+	After = systemd-user-sessions.service network.target sound.target
+
+# if you need the MySQL DB backend, use this block instead of the previous
+# After = systemd-user-sessions.service network.target sound.target mysql.service
+# Wants = mysql.service
+
+	[Service]
+	User = kodi
+	Group = kodi
+	Type = simple
+	ExecStart = /usr/bin/kodi-standalone
+	Restart = always
+	RestartSec = 15
+
+	[Install]
+	WantedBy = multi-user.target
+	```
+	* /etc/systemd/system 에 kodi.service 생성
+	* 
+	```
+	systemctl daemon-reload
+	systemctl enable kodi.service
+	systemctl start kodi.service
+	```
+* 한글 설정
+	* Setting >> Interface >> Skin >> fonts >> Arial 
+	* Setting >> Interface >> Regional >> Languege >> Korean
+#### Netflix
+* `sudo apt install kodi-peripheral-joystick kodi-pvr-iptvsimple kodi-inputstream-adaptive kodi-inputstream-rtmp`
+* `sudo apt install build-essential python-pip python-dev libffi-dev libssl-dev libnss3`
+* `sudo pip install setuptools wheel pycryptodomex`
+* Plugin Download 
+	* `wget https://github.com/castagnait/repository.castagnait/raw/master/repository.castagnait-1.0.0.zip`
+	* kodi >> Settings >> System >> Add-ons >> Unkown-Sources(Turn on)
+	* kodi >> Settings >> Addon >> Install from zip file >> Install repository.castagnait-1.0.0.zip
+	* kodi >> Settings >> Addon >> Install from repository >> repository.castagnagit >> Video Addon >> Netflix
+	* Eable Adaptive InputStream
+		* kodi >> Settings >> my-Addon >> Video Player Input Stream >> Input Stream Eanble
+
+
 
