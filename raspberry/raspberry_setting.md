@@ -52,12 +52,12 @@ Kodi 설정
 	[Unit]
 	Description = Kodi Media Center
 
-# if you don't need the MySQL DB backend, this should be sufficient
+	# if you don't need the MySQL DB backend, this should be sufficient
 	After = systemd-user-sessions.service network.target sound.target
 
-# if you need the MySQL DB backend, use this block instead of the previous
-# After = systemd-user-sessions.service network.target sound.target mysql.service
-# Wants = mysql.service
+	# if you need the MySQL DB backend, use this block instead of the previous
+	# After = systemd-user-sessions.service network.target sound.target mysql.service
+	# Wants = mysql.service
 
 	[Service]
 	User = kodi
@@ -71,7 +71,6 @@ Kodi 설정
 	WantedBy = multi-user.target
 	```
 	* /etc/systemd/system 에 kodi.service 생성
-	* 
 	```
 	systemctl daemon-reload
 	systemctl enable kodi.service
