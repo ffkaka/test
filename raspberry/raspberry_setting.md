@@ -13,14 +13,14 @@ WiFi 를 사용하지 않고 싶은 경우
 --------------------------------
 [ 이 설정은 Keyborad 가 연결 된 상태에서만 가능하다 ]
 * raspi-config 에서 설정
-** Localization Option >>
-** Change Keyboard Layout >>
-** Generic 105 (intl..) >>
-** Other >>
-** Korean >>
-** Korean (101/104 key compatiable) >>
-** The default for the keyboard layout  >>
-** no compose key
+>> Localization Option >>
+>> Change Keyboard Layout >>
+>> Generic 105 (intl..) >>
+>> Other >>
+>> Korean >>
+>> Korean (101/104 key compatiable) >>
+>> The default for the keyboard layout  >>
+>> no compose key
 
 
 
