@@ -60,8 +60,8 @@ Kodi 설정
 	# Wants = mysql.service
 
 	[Service]
-	User = kodi
-	Group = kodi
+	User = pi
+	Group = pi
 	Type = simple
 	ExecStart = /usr/bin/kodi-standalone
 	Restart = always
