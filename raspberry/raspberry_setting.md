@@ -39,6 +39,18 @@ Transmission Daemon 설정
 
 * Torrent 머신으로 사용하기 위해서는 아래 패키지를 설치한다 
 	* `sudo apt install transmission-daemon`
+* Transmission Web 사용을 위해서는 아래 작업을 해준다
+	# Stop the Transmission daemon
+	`sudo systemctl stop transmission-daemon`
+	# Edit a setting file
+	`vi /etc/transmission-daemon/settings.json'
+	`"incomplete-dir": "/home/pi/ExtD/TorrentDown",`
+	`"download-dir": "/home/pi/ExtD/TorrentDow",`
+	`"rpc-password": "Your_Password",`
+	`"rpc-username": "Your_Username",`
+	`"rpc-whitelist": "192.168.*.*"`
+	`sudo systemctl daemon-reload`
+	`sudo systemctl restart transmission-daemon`
 
 
 
