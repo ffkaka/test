@@ -91,6 +91,8 @@ Kodi 설정
 * 한글 설정
 	* Setting >> Interface >> Skin >> fonts >> Arial 
 	* Setting >> Interface >> Regional >> Languege >> Korean
+* Web UI Setting
+	* Setting >> Service >> Control
 #### Netflix
 * `sudo apt install kodi-peripheral-joystick kodi-pvr-iptvsimple kodi-inputstream-adaptive kodi-inputstream-rtmp`
 * `sudo apt install build-essential python-pip python-dev libffi-dev libssl-dev libnss3`
@@ -102,6 +104,8 @@ Kodi 설정
 	* kodi >> Settings >> Addon >> Install from repository >> repository.castagnagit >> Video Addon >> Netflix
 	* Eable Adaptive InputStream
 		* kodi >> Settings >> my-Addon >> Video Player Input Stream >> Input Stream Eanble
-
-
+		
+* My Raspberry pi4 GPU
+	* gpu memory split : 512M
+	* max-framework-buffer : 8
 
