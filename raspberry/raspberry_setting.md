@@ -44,8 +44,8 @@ Transmission Daemon 설정
 		* `sudo systemctl stop transmission-daemon`
 	* Edit a setting file
 		* `vi /etc/transmission-daemon/settings.json`
-		* `"incomplete-dir": "/home/pi/ExtD/TorrentDown",`
-		* `"download-dir": "/home/pi/ExtD/TorrentDow",`
+		* `"incomplete-dir": "/home/pi/TorrentDown",`
+		* `"download-dir": "/home/pi/TorrentDow",`
 		* `"rpc-password": "Your_Password",`
 		* `"rpc-username": "Your_Username",`
 		* `"rpc-whitelist": "192.168.*.*"`
