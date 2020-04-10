@@ -91,6 +91,10 @@ Kodi 설정
 * 한글 설정
 	* Setting >> Interface >> Skin >> fonts >> Arial 
 	* Setting >> Interface >> Regional >> Languege >> Korean
+* 자막용 할글 추가
+	* ttf 파일을 아래 경로에 추가
+		* `/usr/share/kodi/media/Fonts`
+	* Setting >> Player >> 자막언어 
 * Web UI Setting
 	* Setting >> Service >> Control
 #### Netflix
