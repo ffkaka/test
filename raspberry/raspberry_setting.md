@@ -7,6 +7,17 @@ WiFi 를 사용하지 않고 싶은 경우
 	* `dtoverlay=pi3-diable-wifi`
 * WiFi 를 사용하고 싶은 경우는 WiFi Country를 US 로 선택해줘야 잘 되는 경우가 많다
 	* Just in my case
+	
+RAM DISK 사용을 위한 fstab 설정
+--------------------------------
+```
+proc            /proc           proc    defaults          0       0
+PARTUUID=738a4d67-01  /boot           vfat    defaults          0       2
+PARTUUID=d34db33f-02  /               ext4    defaults,noatime  0       1
+tmpfs   /ram    tmpfs   nodev,nosuid,uid=pi,gid=pi,size=512M    0       0
+# a swapfile is not a swap partition, no line here
+#   use  dphys-swapfile swap[on|off]  for that
+```
 
 
 한글입력을 위한 Keyborad Layout 설정
